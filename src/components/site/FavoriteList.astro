@@ -1,6 +1,7 @@
 ---
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui';
 import { cn } from '@/utils/cn';
+import { withAsset } from '@/utils/base';
 import type { Favorite } from '@/data/about';
 
 /**
@@ -13,9 +14,11 @@ export interface Props {
   title: string;
   items: Favorite[];
   class?: string;
+  /** Gap between the hovered label and the preview, in px. */
+  previewOffset?: number;
 }
 
-const { title, items, class: className } = Astro.props;
+const { title, items, class: className, previewOffset = 20 } = Astro.props;
 ---
 
 <div class={cn('relative grid gap-10 select-none md:grid-cols-2 md:gap-20', className)}>
@@ -31,10 +34,11 @@ const { title, items, class: className } = Astro.props;
             </TooltipTrigger>
             <TooltipContent
               side="right"
+              style={`margin-left:${previewOffset}px`}
               class="pointer-events-none h-45 w-70 overflow-hidden rounded-lg border-0 bg-transparent p-0 shadow-2xl"
             >
               <img
-                src={item.image}
+                src={withAsset(item.image)}
                 alt={item.label}
                 width="280"
                 height="180"

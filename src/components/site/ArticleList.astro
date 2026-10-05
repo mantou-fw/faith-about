@@ -1,5 +1,6 @@
 ---
 import { cn } from '@/utils/cn';
+import { withBase } from '@/utils/base';
 import type { Article } from '@/data/about';
 
 /** Divided list of recent writing, newest first. */
@@ -23,7 +24,7 @@ const {
 <section class={cn('space-y-10', className)}>
   <div class="container flex items-center justify-between">
     <h2 class="text-2xl leading-none">{title}</h2>
-    <a href={allHref} class="link-underline text-lg leading-none">{allLabel}</a>
+    <a href={withBase(allHref)} class="link-underline text-lg leading-none">{allLabel}</a>
   </div>
 
   <ul class="divide-y rounded-3xl border shadow-xs">
@@ -31,7 +32,7 @@ const {
       articles.map((article) => (
         <li class="relative first:rounded-t-3xl last:rounded-b-3xl">
           <a
-            href={article.href}
+            href={withBase(article.href)}
             class="hover:bg-muted/40 relative z-10 flex items-start justify-between gap-6 p-10 transition-colors"
           >
             <div class="space-y-5">

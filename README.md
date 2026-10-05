@@ -1,19 +1,23 @@
 # Faith — About
 
 Personal about page built with [Astro 7](https://astro.build) and
-[Bearnie](https://bearnie.dev) UI primitives, deployed on Cloudflare Workers.
+[Bearnie](https://bearnie.dev) UI primitives, deployed to GitHub Pages as a
+fully static site.
 
 The layout reproduces the design language of the Echo template — a centered
 content column, dotted hover underlines, hover previews on the favorites
 lists, and a GitHub contribution graph in the footer — rebuilt as real Astro
 components instead of mirrored HTML.
 
+Live at **https://mantou-fw.github.io/faith-about/**
+
 ## Stack
 
-- Astro 7 with `@astrojs/cloudflare`
+- Astro 7, `output: 'static'` (no adapter, no server runtime)
 - Tailwind CSS 4
-- Bearnie (source-owned UI primitives, no component runtime)
+- Bearnie (source-owned UI primitives, vanilla JS, no framework runtime)
 - TypeScript
+- GitHub Actions → GitHub Pages
 
 ## Commands
 
@@ -23,8 +27,35 @@ cp .env.example .env
 npm run dev      # http://localhost:4321
 npm run check    # astro check
 npm run build
-npm run deploy   # build + wrangler deploy
+npm run preview  # serve dist/ locally
 ```
+
+## Deploying
+
+Push to `main`. `.github/workflows/deploy.yml` builds and publishes to GitHub
+Pages via `withastro/action` + `actions/deploy-pages`. No secrets needed.
+
+Enable it once in the repo if it is not already on:
+
+**Settings → Pages → Build and deployment → Source: GitHub Actions**
+
+### The `base` prefix
+
+The site lives under a subpath, so `astro.config.mjs` sets
+`base: '/faith-about'`. Every internal href and every `public/` asset URL must
+carry that prefix or it resolves at the domain root and 404s.
+
+Go through the helpers rather than concatenating strings:
+
+```ts
+import { withBase, withAsset } from '@/utils/base';
+
+<a href={withBase('/about')}>About</a>
+<img src={withAsset('/images/home/avatar.webp')} />
+```
+
+`withBase` passes absolute URLs, protocol-relative URLs and fragments through
+untouched, so external links need no special casing.
 
 ## Layout
 
@@ -39,7 +70,10 @@ src/
 │   └── contributions.ts GitHub activity, regenerate from the API
 ├── layouts/
 ├── pages/
-└── styles/
+├── styles/
+└── utils/
+    ├── base.ts      deployment-prefix helpers
+    └── cn.ts        class composition
 ```
 
 Rules, in order:
@@ -75,24 +109,16 @@ build time, and clips the trailing week so no future days are drawn.
 
 ## Configuration
 
-| Variable                 | Purpose                                  |
-| ------------------------ | ---------------------------------------- |
-| `SITE_URL`               | Canonical origin for SEO + sitemap       |
-| `PUBLIC_SITE_NAME`       | Site name in titles and structured data  |
-| `PUBLIC_CONTACT_EMAIL`   | Footer contact link                      |
-| `PUBLIC_GOOGLE_TAG_ID`   | Optional; blank disables Google Tag      |
+| Variable               | Purpose                                     | Default                     |
+| ---------------------- | ------------------------------------------- | --------------------------- |
+| `SITE_URL`             | Canonical origin for SEO + sitemap          | `https://mantou-fw.github.io` |
+| `SITE_BASE`            | Deployment subpath                          | `/faith-about`              |
+| `PUBLIC_SITE_NAME`     | Site name in titles and structured data     | `Faith LI`                  |
+| `PUBLIC_CONTACT_EMAIL` | Footer contact link                         | `mantou.fw@gmail.com`       |
+| `PUBLIC_GOOGLE_TAG_ID` | Optional; blank disables Google Tag         | —                           |
 
-## Deploying
-
-The Cloudflare adapter needs a KV namespace for sessions and an Images
-binding for image processing. See `wrangler.jsonc`.
-
-```bash
-npm run deploy
-```
-
-Set `SITE_URL` to the deployed origin so canonical URLs and the sitemap
-resolve correctly.
+All are build-time only. Anything under `PUBLIC_` is inlined into the HTML, so
+never put a secret there.
 
 ## Credits
 

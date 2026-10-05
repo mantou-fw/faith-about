@@ -1,5 +1,6 @@
 ---
 import { profile } from '@/data/about';
+import { withBase } from '@/utils/base';
 
 const nav = [
   { href: '/', label: 'Home', icon: 'home' },
@@ -21,6 +22,9 @@ const socials = [
 ] as const;
 
 const { pathname } = Astro.url;
+// Astro.url.pathname already includes the deployment base on a static build,
+// so compare against the unprefixed route.
+const route = pathname.replace(withBase('/').replace(/\/$/, ''), '') || '/';
 ---
 
 <header class="supports-backdrop-filter:bg-background/60 sticky top-0 z-50 w-full backdrop-blur">
@@ -29,12 +33,12 @@ const { pathname } = Astro.url;
       {
         nav.map((item) => (
           <a
-            href={item.href}
+            href={withBase(item.href)}
             aria-label={item.label}
-            aria-current={pathname === item.href ? 'page' : undefined}
+            aria-current={route === item.href ? 'page' : undefined}
             class:list={[
               'inline-flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-full transition-all outline-none focus-visible:ring-ring/50 focus-visible:ring-[3px]',
-              pathname === item.href
+              route === item.href
                 ? 'bg-foreground text-background'
                 : 'bg-muted text-foreground hover:bg-muted/75',
             ]}

@@ -2,6 +2,7 @@
 import { Card } from '@/components/ui';
 import Container from '@/components/site/Container.astro';
 import Section from '@/components/site/Section.astro';
+import { withAsset } from '@/utils/base';
 import { profile, story } from '@/data/about';
 ---
 
@@ -13,7 +14,7 @@ import { profile, story } from '@/data/about';
   <Container size="wide" class="pt-10 md:pt-15">
     <Card class="relative aspect-video overflow-hidden border-0 p-0 shadow-none">
       <img
-        src="/images/home/avatar.webp"
+        src={withAsset('/images/home/avatar.webp')}
         alt={`${profile.name} working`}
         width="1280"
         height="720"

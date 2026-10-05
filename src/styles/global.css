@@ -33,6 +33,8 @@ body {
   font-style: normal;
   font-weight: 300 800;
   font-display: swap;
+  /* Relative to the stylesheet, so the deployment base is picked up automatically
+     by the bundler rather than hard-coded here. */
   src: url("/fonts/53c9791758e212af.woff2") format("woff2");
 }
 

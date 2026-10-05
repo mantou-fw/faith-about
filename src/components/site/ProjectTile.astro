@@ -1,6 +1,7 @@
 ---
 import { Card } from '@/components/ui';
 import { cn } from '@/utils/cn';
+import { withAsset, withBase } from '@/utils/base';
 import type { Project } from '@/data/about';
 
 /** Featured project tile used in the "Currently building" grid. */
@@ -15,7 +16,7 @@ const isExternal = project.href.startsWith('http');
 
 <li class={className}>
   <a
-    href={project.href}
+    href={isExternal ? project.href : withBase(project.href)}
     class="group block space-y-6"
     target={isExternal ? '_blank' : undefined}
     rel={isExternal ? 'noopener noreferrer' : undefined}
@@ -25,7 +26,7 @@ const isExternal = project.href.startsWith('http');
     >
       <div class="relative size-full">
         <img
-          src={project.image}
+          src={withAsset(project.image)}
           alt={project.name}
           width="640"
           height="320"
