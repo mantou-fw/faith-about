@@ -11,11 +11,9 @@ import { contributions } from '@/data/contributions';
 
 interface Props {
   class?: string;
-  /** Hide on small screens, where the graph is unreadable anyway. */
-  hideBelow?: 'md' | 'lg';
 }
 
-const { class: className, hideBelow = 'md' } = Astro.props;
+const { class: className } = Astro.props;
 
 // Build-time clock. The graph must not draw days that have not happened yet.
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -23,7 +21,10 @@ const TODAY = new Date().toISOString().slice(0, 10);
 const BLOCK = 12;
 const MARGIN = 4.5;
 const RADIUS = 2.4;
-const LABEL_HEIGHT = 16;
+// Matches the template's label band: fontSize 14 + 8 of headroom. The template
+// renders no month labels (`hideMonthLabels`), but reserves the band anyway, so
+// the graph keeps the same vertical footprint.
+const LABEL_HEIGHT = 22;
 
 const byDate = new Map(contributions.map((d) => [d.date, d]));
 const first = new Date(`${contributions[0]!.date}T00:00:00Z`);
@@ -48,21 +49,6 @@ for (let t = start.getTime(); t <= end.getTime(); t += DAY) {
 const weeks: (typeof contributions)[] = [];
 for (let i = 0; i < days.length; i += 7) weeks.push(days.slice(i, i + 7));
 
-// A month label goes on the first week whose first day starts a new month, but
-// only if it is at least 3 weeks past the previous label.
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const monthLabels: { week: number; label: string }[] = [];
-weeks.forEach((week, index) => {
-  const firstOfWeek = week.find((d) => d);
-  if (!firstOfWeek) return;
-  const date = new Date(`${firstOfWeek.date}T00:00:00Z`);
-  const isFirstWeekOfMonth = date.getUTCDate() <= 7;
-  const previous = monthLabels.at(-1);
-  if (!isFirstWeekOfMonth) return;
-  if (previous && index - previous.week < 3) return;
-  monthLabels.push({ week: index, label: MONTHS[date.getUTCMonth()]! });
-});
-
 const width = weeks.length * (BLOCK + MARGIN) - MARGIN;
 const height = LABEL_HEIGHT + 7 * (BLOCK + MARGIN) - MARGIN;
 const total = contributions.reduce((sum, day) => sum + day.count, 0);
@@ -78,67 +64,42 @@ const levelClass = [
 
 <footer class="mx-auto w-full max-w-[880px] space-y-37.5 px-4 pt-12.5 pb-16 md:px-5 md:pt-15 lg:pt-18.75">
   <div
-    class:list={[
-      'max-w-full flex-col gap-2',
-      hideBelow === 'md' ? 'hidden w-full md:flex' : 'hidden w-full lg:flex',
-      className,
-    ]}
+    class:list={['max-w-full flex-col gap-2 hidden w-full md:block', className]}
     style="font-size:12px"
   >
-    <p class="text-muted-foreground">
-      <strong class="text-foreground font-medium">{total}</strong> contributions on GitHub in the last year
-    </p>
+    <div class="max-w-full overflow-hidden">
+      <svg
+        class="block w-full overflow-visible"
+        viewBox={`0 0 ${width} ${height}`}
+        preserveAspectRatio="xMidYMid meet"
+        role="img"
+        aria-label="Contribution Graph"
+      >
+        <title>Contribution Graph</title>
 
-    <div class="max-w-full overflow-x-auto">
-      <div class="min-w-full">
-        <svg
-          class="block w-full overflow-visible"
-          viewBox={`0 0 ${width} ${height}`}
-          preserveAspectRatio="xMidYMid meet"
-          role="img"
-          aria-label={`GitHub contribution graph: ${total} contributions`}
-        >
-          <title>Contribution Graph</title>
-
-          <g class="fill-current">
-            {
-              monthLabels.map(({ week, label }) => (
-                <text
-                  x={(BLOCK + MARGIN) * week}
-                  y="0"
-                  dominant-baseline="hanging"
-                  font-size="10"
+        {
+          weeks.map((week, weekIndex) =>
+            week.map((day, dayIndex) =>
+              day ? (
+                <rect
+                  class={levelClass[day.level]}
+                  data-count={day.count}
+                  data-date={day.date}
+                  data-level={day.level}
+                  x={(BLOCK + MARGIN) * weekIndex}
+                  y={LABEL_HEIGHT + (BLOCK + MARGIN) * dayIndex}
+                  width={BLOCK}
+                  height={BLOCK}
+                  rx={RADIUS}
+                  ry={RADIUS}
                 >
-                  {label}
-                </text>
-              ))
-            }
-          </g>
-
-          {
-            weeks.map((week, weekIndex) =>
-              week.map((day, dayIndex) =>
-                day ? (
-                  <rect
-                    class={levelClass[day.level]}
-                    data-count={day.count}
-                    data-date={day.date}
-                    data-level={day.level}
-                    x={(BLOCK + MARGIN) * weekIndex}
-                    y={LABEL_HEIGHT + (BLOCK + MARGIN) * dayIndex}
-                    width={BLOCK}
-                    height={BLOCK}
-                    rx={RADIUS}
-                    ry={RADIUS}
-                  >
-                    <title>{`${day.count} contribution${day.count === 1 ? '' : 's'} on ${day.date}`}</title>
-                  </rect>
-                ) : null,
-              ),
-            )
-          }
-        </svg>
-      </div>
+                  <title>{`${day.count} contribution${day.count === 1 ? '' : 's'} on ${day.date}`}</title>
+                </rect>
+              ) : null,
+            ),
+          )
+        }
+      </svg>
     </div>
   </div>
 
