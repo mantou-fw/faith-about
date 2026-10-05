@@ -21,7 +21,6 @@
     "design:detect": "impeccable detect src/"
   },
   "dependencies": {
-    "@astrojs/partytown": "^2.1.7",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.3",
     "astro-seo": "^1.2.0",

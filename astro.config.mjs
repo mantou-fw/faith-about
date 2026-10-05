@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import partytown from '@astrojs/partytown';
 import tailwindcss from '@tailwindcss/vite';
 
 // GitHub Pages serves this site from https://mantou-fw.github.io/faith-about/,
@@ -13,13 +12,6 @@ export default defineConfig({
   // Everything on this site is prerendered at build time. No adapter needed.
   output: 'static',
   trailingSlash: 'always',
-  integrations: [
-    partytown({
-      config: {
-        forward: ['dataLayer.push'],
-      },
-    }),
-  ],
   vite: {
     plugins: [tailwindcss()],
   },

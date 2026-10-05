@@ -1,6 +1,5 @@
 ---
 import { SEO } from 'astro-seo';
-import GoogleTag from '../components/GoogleTag.astro';
 import { withBase } from '@/utils/base';
 import '../styles/global.css';
 
@@ -83,7 +82,6 @@ const structuredData =
       set:html={JSON.stringify(structuredData)}
     ></script>
 
-    <GoogleTag />
     <slot name="head" />
   </head>
   <body class="min-h-screen antialiased">
