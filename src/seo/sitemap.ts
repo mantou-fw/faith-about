@@ -2,14 +2,9 @@ import { EnumChangefreq, type SitemapItemLoose } from 'sitemap';
 
 const staticEntries: SitemapItemLoose[] = [
   {
-    url: '/',
-    changefreq: EnumChangefreq.WEEKLY,
-    priority: 1,
-  },
-  {
     url: '/about',
     changefreq: EnumChangefreq.MONTHLY,
-    priority: 0.8,
+    priority: 1,
   },
 ];
 

@@ -2,11 +2,14 @@
 import { profile } from '@/data/about';
 import { withBase } from '@/utils/base';
 
+// The about page is the only page, so every nav item points at it. The icon
+// set is kept at the template's original size so the header still reads as the
+// same row of round controls — just all landing on the same destination.
 const nav = [
-  { href: '/', label: 'Home', icon: 'home' },
-  { href: '/projects', label: 'Projects', icon: 'gallery' },
+  { href: '/about', label: 'Home', icon: 'home' },
+  { href: '/about', label: 'Projects', icon: 'gallery' },
   { href: '/about', label: 'Profile', icon: 'user' },
-  { href: '/articles', label: 'Articles', icon: 'pen' },
+  { href: '/about', label: 'Articles', icon: 'pen' },
 ] as const;
 
 const iconPaths = {
@@ -35,10 +38,10 @@ const route = pathname.replace(withBase('/').replace(/\/$/, ''), '') || '/';
         <a
           href={withBase(item.href)}
           aria-label={item.label}
-          aria-current={route === item.href ? 'page' : undefined}
+          aria-current={route === '/about' && item.icon === 'user' ? 'page' : undefined}
           class:list={[
             'inline-flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-full transition-all outline-none focus-visible:ring-ring/50 focus-visible:ring-[3px]',
-            route === item.href
+            route === '/about' && item.icon === 'user'
               ? 'bg-foreground text-background'
               : 'bg-muted text-foreground hover:bg-muted/75',
           ]}

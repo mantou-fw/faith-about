@@ -1,13 +1,29 @@
 ---
-import Hero from "@/components/site/Hero.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
-
-export const prerender = true;
+/**
+ * The site has one page: the about page lives at /about/.
+ *
+ * This root exists only so the bare `github.io/faith-about/` URL lands
+ * somewhere instead of a 404. Astro can emit a redirect page for a path, but
+ * on a static build that page carries `noindex` and a canonical pointing at the
+ * un-prefixed origin — both wrong once `base` is set. Writing it by hand keeps
+ * the canonical correct and avoids telling crawlers the site is unindexable.
+ *
+ * The target must carry `base` itself: `/about/` alone would resolve at the
+ * domain root and 404.
+ */
+const target = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/about/`;
 ---
 
-<BaseLayout
-  title="Home"
-  description="Personal site of Faith LI — about, stack, projects and writing."
->
-  <Hero />
-</BaseLayout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Redirecting…</title>
+    <link rel="canonical" href={`${import.meta.env.SITE ?? 'https://mantou-fw.github.io'}${target}`} />
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+  </head>
+  <body>
+    <p>This page has moved to <a href={target}>the about page</a>.</p>
+  </body>
+</html>
