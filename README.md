@@ -1,169 +1,101 @@
-# Astro Starter
+# Faith — About
 
-Reusable Astro starter for Cloudflare Workers with an intent-first agent workflow.
+Personal about page built with [Astro 7](https://astro.build) and
+[Bearnie](https://bearnie.dev) UI primitives, deployed on Cloudflare Workers.
 
-## Core idea
-
-The starter is designed to reduce the most common agent failure: building a reasonable interpretation that is not what the user wanted.
-
-```text
-Intent Gate
-   ↓
-Grill unresolved decisions
-   ↓
-Capture CONTEXT / ADRs
-   ↓
-Lock an approved spec
-   ↓
-Implement at agreed seams
-   ↓
-Review Standards + Spec separately
-```
-
-The intent workflow is adapted from Matt Pocock's skills repository:
-https://github.com/mattpocock/skills
+The layout reproduces the design language of the Echo template — a centered
+content column, dotted hover underlines, hover previews on the favorites
+lists, and a GitHub contribution graph in the footer — rebuilt as real Astro
+components instead of mirrored HTML.
 
 ## Stack
 
-- Astro 7
-- Cloudflare Workers
+- Astro 7 with `@astrojs/cloudflare`
 - Tailwind CSS 4
-- npm
-- Bearnie UI primitives
-- Impeccable design workflow
-- Matt Pocock intent/spec/TDD/review skills
-- Astro Docs MCP + Bearnie MCP
-- runtime sitemap
-- SEO + Google Tag
+- Bearnie (source-owned UI primitives, no component runtime)
+- TypeScript
 
-## Package manager
-
-This starter is npm-first for maximum compatibility with standard Node.js, CI, hosting and agent environments.
-
-No Corepack setup is required.
-
-Development:
-
-```bash
-npm install
-npm run dev
-```
-
-After the first successful install, commit the generated `package-lock.json`. Once a lockfile exists, CI and deployment should use:
-
-```bash
-npm ci
-```
-
-Do not add pnpm, Yarn or Bun lockfiles unless the project intentionally changes package managers.
-
-## Intent workflow
-
-For material changes, agents must read:
-
-```text
-.agent/skills/project-intent/SKILL.md
-```
-
-The project only grills when a material decision is unresolved. Small mechanical changes remain fast.
-
-Specs live under:
-
-```text
-docs/specs/
-```
-
-Domain vocabulary lives in `CONTEXT.md` when needed; durable architectural trade-offs live under `docs/adr/`.
-
-## UI workflow
-
-```text
-Impeccable design judgement
-          ↓
-src/components/site
-          ↓
-src/components/ui
-          ↓
-src/components/bearnie
-```
-
-## MCP
-
-```text
-astro-docs  → https://mcp.docs.astro.build/mcp
-bearnie     → npx @bearnie/mcp
-```
-
-## Start
+## Commands
 
 ```bash
 npm install
 cp .env.example .env
-npm run dev
-```
-
-## Useful commands
-
-```bash
-npm run check
+npm run dev      # http://localhost:4321
+npm run check    # astro check
 npm run build
-npm run deploy
-
-npm run ui:list
-npm run ui:add -- dialog tabs tooltip
-npm run ui:diff
-npm run ui:update
-
-npm run design:install
-npm run design:check
-npm run design:update
-npm run design:detect
+npm run deploy   # build + wrangler deploy
 ```
 
-npm passes script arguments after `--`, for example:
-
-```bash
-npm run ui:add -- dialog tabs tooltip
-```
-
-For one-off local binaries, `npx` is also fine:
-
-```bash
-npx bearnie add styles-slate-blue --overwrite
-npx impeccable detect src/components/site/Hero.astro
-```
-
-## Agent structure
+## Layout
 
 ```text
-AGENTS.md
-.mcp.json
-.agent/
-├── skills/
-│   ├── astro-project/
-│   ├── impeccable/
-│   ├── project-intent/
-│   ├── grill-me/
-│   ├── grilling/
-│   ├── grill-with-docs/
-│   ├── domain-modeling/
-│   ├── to-spec/
-│   ├── codebase-design/
-│   ├── tdd/
-│   ├── implement/
-│   └── code-review/
-└── references/
-    ├── astro-ai.md
-    ├── bearnie-mcp.md
-    ├── impeccable.md
-    └── matt-pocock-skills.md
+src/
+├── components/
+│   ├── bearnie/     vendor primitives — do not edit by hand
+│   ├── ui/          the only public primitive API for app code
+│   └── site/        page composition
+├── data/
+│   ├── about.ts         all page copy and lists
+│   └── contributions.ts GitHub activity, regenerate from the API
+├── layouts/
+├── pages/
+└── styles/
 ```
 
-## Notes
+Rules, in order:
 
-- Node 22.18+ is required by the current design tooling.
-- npm is the canonical package manager for this starter.
-- The local Markdown spec tracker is the portable default.
-- A cloned project may switch to GitHub/GitLab/Linear later.
-- Do not let an agent silently invent missing product/design standards.
-- Facts should be researched by the agent; decisions belong to the user.
+1. Check `src/components/bearnie` before writing a new primitive.
+2. Application code imports from `@/components/ui`, never from `@/components/bearnie`.
+3. Site components compose `@/components/ui`.
+4. Use `cn()` from `@/utils/cn` for class composition.
+5. Prefer semantic tokens — `bg-background`, `text-muted-foreground`, `border-border`.
+
+See `UI.md` for the full architecture and `AGENTS.md` for agent rules.
+
+## Editing the content
+
+All copy lives in `src/data/about.ts` — name, story paragraphs, favorite
+movies and cars, stack, projects, articles. Nothing needs to be touched in
+the components.
+
+The stack logos are real Simple Icons paths (CC0-1.0) in
+`src/components/site/icons/`. To add a tool, drop its path into a new
+component and register it in `StackGrid.astro`.
+
+## The contribution graph
+
+`src/data/contributions.ts` is generated, not hand-written. Refresh it with:
+
+```bash
+gh api graphql -F query=@query.graphql   # contributionCalendar
+```
+
+The footer then re-derives week columns, month labels and heat levels at
+build time, and clips the trailing week so no future days are drawn.
+
+## Configuration
+
+| Variable                 | Purpose                                  |
+| ------------------------ | ---------------------------------------- |
+| `SITE_URL`               | Canonical origin for SEO + sitemap       |
+| `PUBLIC_SITE_NAME`       | Site name in titles and structured data  |
+| `PUBLIC_CONTACT_EMAIL`   | Footer contact link                      |
+| `PUBLIC_GOOGLE_TAG_ID`   | Optional; blank disables Google Tag      |
+
+## Deploying
+
+The Cloudflare adapter needs a KV namespace for sessions and an Images
+binding for image processing. See `wrangler.jsonc`.
+
+```bash
+npm run deploy
+```
+
+Set `SITE_URL` to the deployed origin so canonical URLs and the sitemap
+resolve correctly.
+
+## Credits
+
+- Design language adapted from the Echo Astro template.
+- Stack marks from [Simple Icons](https://simpleicons.org) (CC0-1.0).
+- UI primitives from [Bearnie](https://bearnie.dev) by Michael Andreuzza.

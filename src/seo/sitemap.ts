@@ -1,11 +1,16 @@
 import type { APIContext } from 'astro';
-import type { SitemapItemLoose } from 'sitemap';
+import { EnumChangefreq, type SitemapItemLoose } from 'sitemap';
 
 const staticEntries: SitemapItemLoose[] = [
   {
     url: '/',
-    changefreq: 'weekly',
+    changefreq: EnumChangefreq.WEEKLY,
     priority: 1,
+  },
+  {
+    url: '/about',
+    changefreq: EnumChangefreq.MONTHLY,
+    priority: 0.8,
   },
 ];
 
