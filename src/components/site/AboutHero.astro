@@ -6,12 +6,12 @@ import { withAsset } from '@/utils/base';
 import { profile, story } from '@/data/about';
 ---
 
-<Section variant="hero">
+<Section variant="hero" class="pb-12.5 md:pb-15 lg:pb-18.75">
   <Container>
     <h1 class="text-3xl md:text-4xl">{profile.about}</h1>
   </Container>
 
-  <Container size="wide" class="pt-10 md:pt-15">
+  <Container size="wide" class="hero-padding">
     <Card class="relative aspect-video overflow-hidden rounded-3xl border p-0 shadow-xs">
       <img
         src={withAsset('/images/home/avatar.webp')}
@@ -25,7 +25,7 @@ import { profile, story } from '@/data/about';
     </Card>
   </Container>
 
-  <Container class="space-y-10 pt-12.5 md:pt-15">
+  <Container class="space-y-10">
     <h2 class="text-2xl">Story</h2>
     <div class="text-muted-foreground space-y-8 text-lg">
       {story.map((paragraph) => <p>{paragraph}</p>)}

@@ -1,16 +1,42 @@
 ---
-export interface Props {
+/**
+ * Vertical rhythm and horizontal measure.
+ *
+ * The template pairs a spacing step with a width step on the same element —
+ * `section-padding bigger-container`, `section-padding container` — so Section
+ * carries both rather than nesting a width wrapper inside a padding wrapper.
+ *
+ * Vertical steps:
+ *   .hero-padding     60 / 80 / 120px  — the opening block
+ *   .section-padding  50 / 60 /  75px  — every section below it
+ *
+ * Horizontal steps:
+ *   .container         880px, 20px inline padding from md
+ *   .bigger-container  952px, 16px padding at every width
+ *
+ * The padding difference between the two widths is deliberate upstream:
+ * `bigger-container` never steps up.
+ */
+interface Props {
   as?: string;
-  variant?: 'hero' | 'section';
+  variant?: 'hero' | 'section' | 'flush';
+  size?: 'default' | 'wide' | 'fluid';
   class?: string;
 }
 
-const { as: Tag = 'section', variant = 'section', class: className } = Astro.props;
+const { as: Tag = 'section', variant = 'section', size = 'fluid', class: className } = Astro.props;
 
 const variants = {
-  hero: 'pb-12.5 pt-0 md:pb-15',
+  hero: 'py-15 md:py-20 lg:py-30',
   section: 'py-12.5 md:py-15 lg:py-18.75',
+  flush: '',
+} as const;
+
+const widths = {
+  default: 'mx-auto w-full max-w-[880px] px-4 md:px-5',
+  wide: 'mx-auto w-full max-w-[952px] px-4',
+  fluid: 'mx-auto w-full px-4 md:px-5',
 } as const;
 ---
 
-<Tag class:list={[variants[variant], className]}><slot /></Tag>
+<Tag class:list={[variants[variant], widths[size], className]}><slot /></Tag>

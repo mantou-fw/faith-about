@@ -1,6 +1,7 @@
 ---
 import { cn } from '@/utils/cn';
 import { withBase } from '@/utils/base';
+import Container from '@/components/site/Container.astro';
 import type { Article } from '@/data/about';
 
 /** Divided list of recent writing, newest first. */
@@ -21,11 +22,11 @@ const {
 } = Astro.props;
 ---
 
-<section class={cn('space-y-10', className)}>
-  <div class="mx-auto flex w-full max-w-[880px] items-center justify-between px-4 md:px-5">
+<div class={cn('space-y-10', className)}>
+  <Container class="flex items-center justify-between">
     <h2 class="text-2xl leading-none">{title}</h2>
     <a href={withBase(allHref)} class="link-underline text-lg leading-none">{allLabel}</a>
-  </div>
+  </Container>
 
   <ul class="divide-y rounded-3xl border shadow-xs">
     {
@@ -64,4 +65,4 @@ const {
       ))
     }
   </ul>
-</section>
+</div>

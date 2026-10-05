@@ -1,5 +1,6 @@
 ---
 import { cn } from '@/utils/cn';
+import Container from '@/components/site/Container.astro';
 import AstroIcon from '@/components/site/icons/AstroIcon.astro';
 import PythonIcon from '@/components/site/icons/PythonIcon.astro';
 import ReactIcon from '@/components/site/icons/ReactIcon.astro';
@@ -24,8 +25,8 @@ export interface Props {
 const { title = 'My stack', items, class: className } = Astro.props;
 ---
 
-<section class={cn('space-y-10', className)}>
-  <h2 class="mx-auto w-full max-w-[880px] px-4 text-2xl leading-none md:px-5">{title}</h2>
+<div class={cn('space-y-10', className)}>
+  <Container as="h2" class="text-2xl leading-none">{title}</Container>
 
   <ul class="flex flex-wrap items-center gap-4.25 lg:justify-between">
     {
@@ -43,4 +44,4 @@ const { title = 'My stack', items, class: className } = Astro.props;
       })
     }
   </ul>
-</section>
+</div>
