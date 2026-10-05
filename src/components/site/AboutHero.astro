@@ -12,7 +12,7 @@ import { profile, story } from '@/data/about';
   </Container>
 
   <Container size="wide" class="pt-10 md:pt-15">
-    <Card class="relative aspect-video overflow-hidden border-0 p-0 shadow-none">
+    <Card class="relative aspect-video overflow-hidden rounded-3xl border p-0 shadow-xs">
       <img
         src={withAsset('/images/home/avatar.webp')}
         alt={`${profile.name} working`}
@@ -27,7 +27,7 @@ import { profile, story } from '@/data/about';
 
   <Container class="space-y-10 pt-12.5 md:pt-15">
     <h2 class="text-2xl">Story</h2>
-    <div class="text-muted-foreground max-w-3xl space-y-8 text-lg leading-relaxed">
+    <div class="text-muted-foreground space-y-8 text-lg">
       {story.map((paragraph) => <p>{paragraph}</p>)}
     </div>
   </Container>

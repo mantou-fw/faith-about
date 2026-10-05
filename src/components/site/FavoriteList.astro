@@ -24,12 +24,12 @@ const { title, items, class: className, previewOffset = 20 } = Astro.props;
 <div class={cn('relative grid gap-10 select-none md:grid-cols-2 md:gap-20', className)}>
   <h2 class="text-2xl">{title}</h2>
 
-  <ul class="space-y-4">
+  <ul class="space-y-4 text-lg leading-none">
     {
       items.map((item) => (
         <li>
           <Tooltip>
-            <TooltipTrigger class="link-underline cursor-pointer text-lg leading-none transition-opacity duration-300">
+            <TooltipTrigger class="link-underline cursor-pointer transition-opacity duration-300">
               {item.label}
             </TooltipTrigger>
             <TooltipContent

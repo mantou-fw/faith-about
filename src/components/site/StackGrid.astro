@@ -25,7 +25,7 @@ const { title = 'My stack', items, class: className } = Astro.props;
 ---
 
 <section class={cn('space-y-10', className)}>
-  <h2 class="container text-2xl leading-none">{title}</h2>
+  <h2 class="mx-auto w-full max-w-[880px] px-4 text-2xl leading-none md:px-5">{title}</h2>
 
   <ul class="flex flex-wrap items-center gap-4.25 lg:justify-between">
     {
