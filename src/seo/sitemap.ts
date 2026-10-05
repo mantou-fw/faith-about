@@ -1,4 +1,3 @@
-import type { APIContext } from 'astro';
 import { EnumChangefreq, type SitemapItemLoose } from 'sitemap';
 
 const staticEntries: SitemapItemLoose[] = [
@@ -15,28 +14,17 @@ const staticEntries: SitemapItemLoose[] = [
 ];
 
 /**
- * Add runtime-backed URLs here.
+ * Add generated URLs here — collections, content APIs, CMS entries.
  *
- * This function runs when /sitemap.xml is requested, so it can query
- * Cloudflare D1, KV, a CMS, an API, or any other runtime data source.
- *
- * Example:
- * const posts = await db.prepare('SELECT slug, updated_at FROM posts WHERE published = 1').all();
- * return posts.results.map((post) => ({
- *   url: `/posts/${post.slug}`,
- *   lastmod: post.updated_at,
- * }));
+ * The sitemap is prerendered at build time, so anything dynamic has to be
+ * fetched (or read from a file) while the site builds.
  */
-export async function getDynamicSitemapEntries(
-  _context: APIContext,
-): Promise<SitemapItemLoose[]> {
+export async function getDynamicSitemapEntries(): Promise<SitemapItemLoose[]> {
   return [];
 }
 
-export async function getSitemapEntries(
-  context: APIContext,
-): Promise<SitemapItemLoose[]> {
-  const dynamicEntries = await getDynamicSitemapEntries(context);
+export async function getSitemapEntries(): Promise<SitemapItemLoose[]> {
+  const dynamicEntries = await getDynamicSitemapEntries();
 
   return [...staticEntries, ...dynamicEntries];
 }

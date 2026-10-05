@@ -1,6 +1,7 @@
 ---
 import { SEO } from 'astro-seo';
 import GoogleTag from '../components/GoogleTag.astro';
+import { withBase } from '@/utils/base';
 import '../styles/global.css';
 
 interface Props {
@@ -21,13 +22,18 @@ const {
   jsonLd,
 } = Astro.props;
 
-const siteName = import.meta.env.PUBLIC_SITE_NAME ?? 'Astro Starter';
-const site = Astro.site ?? new URL('https://example.com');
+const siteName = import.meta.env.PUBLIC_SITE_NAME ?? 'Faith LI';
+const site = Astro.site ?? new URL('https://mantou-fw.github.io');
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Astro.url.pathname already carries `base` on a static build, so the canonical
+// is the pathname against the site origin — no manual prefixing needed.
 const canonicalUrl = canonical
   ? new URL(canonical, site).href
   : new URL(Astro.url.pathname, site).href;
-const imageUrl = image ? new URL(image, site).href : undefined;
+const imageUrl = image ? new URL(base + image, site).href : undefined;
 const pageTitle = title.includes(siteName) ? title : title + ' | ' + siteName;
+const sitemapUrl = new URL(base + '/sitemap.xml', site).href;
 const structuredData =
   jsonLd ??
   {
@@ -43,6 +49,10 @@ const structuredData =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon/favicon.svg')} />
+    <link rel="icon" sizes="48x48" href={withBase('/favicon/favicon.ico')} />
+    <link rel="apple-touch-icon" href={withBase('/favicon/apple-touch-icon.png')} />
+    <link rel="sitemap" type="application/xml" href={sitemapUrl} />
 
     <SEO
       title={pageTitle}
@@ -67,8 +77,6 @@ const structuredData =
     <meta name="twitter:description" content={description} />
     {imageUrl && <meta name="twitter:image" content={imageUrl} />}
 
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-
     <script
       type="application/ld+json"
       is:inline
@@ -78,7 +86,7 @@ const structuredData =
     <GoogleTag />
     <slot name="head" />
   </head>
-  <body class="min-h-screen bg-white text-neutral-950 antialiased">
+  <body class="min-h-screen antialiased">
     <slot />
   </body>
 </html>

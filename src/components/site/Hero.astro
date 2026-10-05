@@ -9,20 +9,22 @@ import {
   CardTitle,
   Separator,
 } from "@/components/ui";
+import { withBase } from "@/utils/base";
 ---
 
 <main class="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-20 lg:px-8">
   <div class="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
     <section class="max-w-3xl">
-      <Badge variant="secondary">Astro starter</Badge>
+      <Badge variant="secondary">Personal site</Badge>
       <h1 class="mt-6 text-5xl font-semibold tracking-tight text-balance sm:text-7xl">
-        Astro + Cloudflare + Bearnie.
+        Astro + Bearnie.
       </h1>
       <p class="mt-7 max-w-2xl text-lg leading-8 text-muted-foreground">
-        One consistent UI layer, runtime sitemap, Tailwind CSS, SEO, Google Tag and Cloudflare Workers.
+        A statically built about page on GitHub Pages, with one consistent UI layer,
+        Tailwind CSS, SEO and a generated sitemap.
       </p>
       <div class="mt-10 flex flex-wrap gap-3">
-        <Button href="/api/health" size="lg">Test /api/health</Button>
+        <Button href={withBase('/about')} size="lg">Read the about page</Button>
         <Button href="https://bearnie.dev/docs" variant="outline" size="lg">Bearnie docs</Button>
       </div>
     </section>

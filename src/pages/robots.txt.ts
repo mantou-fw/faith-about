@@ -1,12 +1,11 @@
 import type { APIRoute } from 'astro';
 
-export const prerender = false;
+export const prerender = true;
 
-export const GET: APIRoute = ({ request, site }) => {
-  const baseUrl =
-    site?.href.replace(/\/$/, '') ??
-    new URL(request.url).origin;
-  const sitemap = new URL('/sitemap.xml', baseUrl).href;
+export const GET: APIRoute = ({ site }) => {
+  const origin = (site ?? new URL('https://mantou-fw.github.io')).href.replace(/\/$/, '');
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  const sitemap = origin + base + '/sitemap.xml';
 
   const body = [
     'User-agent: *',
