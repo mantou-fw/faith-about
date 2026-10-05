@@ -37,7 +37,7 @@
     "@astrojs/check": "^0.9.10",
     "bearnie": "^0.3.2",
     "impeccable": "^4.1.0",
-    "typescript": "^7.0.2",
+    "typescript": "^5.9.0",
     "wrangler": "^4.135.0"
   }
 }
