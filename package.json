@@ -11,8 +11,6 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "cf-typegen": "wrangler types",
-    "deploy": "astro build && wrangler deploy",
     "ui:list": "bearnie list",
     "ui:add": "bearnie add",
     "ui:diff": "bearnie diff",
@@ -23,7 +21,6 @@
     "design:detect": "impeccable detect src/"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^14.3.1",
     "@astrojs/partytown": "^2.1.7",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.3",
@@ -37,7 +34,6 @@
     "@astrojs/check": "^0.9.10",
     "bearnie": "^0.3.2",
     "impeccable": "^4.1.0",
-    "typescript": "^5.9.0",
-    "wrangler": "^4.135.0"
+    "typescript": "^5.9.0"
   }
 }
