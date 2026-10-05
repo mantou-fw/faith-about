@@ -3,8 +3,8 @@
  * Vertical rhythm and horizontal measure.
  *
  * The template pairs a spacing step with a width step on the same element —
- * `section-padding bigger-container`, `section-padding container` — so Section
- * carries both rather than nesting a width wrapper inside a padding wrapper.
+ * `section-padding bigger-container`, `hero-padding pb-*` — so this component
+ * mirrors that rather than nesting a width wrapper inside a padding wrapper.
  *
  * Vertical steps:
  *   .hero-padding     60 / 80 / 120px  — the opening block
@@ -16,6 +16,9 @@
  *
  * The padding difference between the two widths is deliberate upstream:
  * `bigger-container` never steps up.
+ *
+ * The spacing names are custom classes defined in global.css, not Tailwind
+ * utilities — nothing generates them, so the names must match exactly.
  */
 interface Props {
   as?: string;
@@ -27,8 +30,8 @@ interface Props {
 const { as: Tag = 'section', variant = 'section', size = 'fluid', class: className } = Astro.props;
 
 const variants = {
-  hero: 'py-15 md:py-20 lg:py-30',
-  section: 'py-12.5 md:py-15 lg:py-18.75',
+  hero: 'hero-padding',
+  section: 'section-padding',
   flush: '',
 } as const;
 

@@ -119,6 +119,51 @@ body {
 @theme inline {
   --font-sans: "Funnel Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Arial, sans-serif;
+
+  /* The template defines an `xs` step above `sm`, used by the project tiles to
+     grow from 248px to 320px. Tailwind has no `xs` by default. */
+  --breakpoint-xs: 30rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Spacing steps.
+
+   The template defines these as custom classes outside Tailwind's scale, so
+   nothing generates them — they have to exist here or the class silently does
+   nothing. `hero-padding` in particular is what gives the hero image its
+   generous top and bottom margin.
+   --------------------------------------------------------------------------- */
+
+.hero-padding {
+  padding-block: calc(var(--spacing) * 15);
+}
+
+@media (min-width: 48rem) {
+  .hero-padding {
+    padding-block: calc(var(--spacing) * 20);
+  }
+}
+
+@media (min-width: 64rem) {
+  .hero-padding {
+    padding-block: calc(var(--spacing) * 30);
+  }
+}
+
+.section-padding {
+  padding-block: calc(var(--spacing) * 12.5);
+}
+
+@media (min-width: 48rem) {
+  .section-padding {
+    padding-block: calc(var(--spacing) * 15);
+  }
+}
+
+@media (min-width: 64rem) {
+  .section-padding {
+    padding-block: calc(var(--spacing) * 18.75);
+  }
 }
 
 /* ---------------------------------------------------------------------------
