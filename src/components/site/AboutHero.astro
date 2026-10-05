@@ -1,0 +1,33 @@
+---
+import { Card } from '@/components/ui';
+import Container from '@/components/site/Container.astro';
+import Section from '@/components/site/Section.astro';
+import { profile, story } from '@/data/about';
+---
+
+<Section variant="hero">
+  <Container>
+    <h1 class="text-3xl md:text-4xl">{profile.about}</h1>
+  </Container>
+
+  <Container size="wide" class="pt-10 md:pt-15">
+    <Card class="relative aspect-video overflow-hidden border-0 p-0 shadow-none">
+      <img
+        src="/images/home/avatar.webp"
+        alt={`${profile.name} working`}
+        width="1280"
+        height="720"
+        fetchpriority="high"
+        decoding="async"
+        class="size-full object-cover"
+      />
+    </Card>
+  </Container>
+
+  <Container class="space-y-10 pt-12.5 md:pt-15">
+    <h2 class="text-2xl">Story</h2>
+    <div class="text-muted-foreground max-w-3xl space-y-8 text-lg leading-relaxed">
+      {story.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </Container>
+</Section>

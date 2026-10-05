@@ -1,0 +1,49 @@
+---
+import { Card } from '@/components/ui';
+import { cn } from '@/utils/cn';
+import type { Project } from '@/data/about';
+
+/** Featured project tile used in the "Currently building" grid. */
+export interface Props {
+  project: Project;
+  class?: string;
+}
+
+const { project, class: className } = Astro.props;
+const isExternal = project.href.startsWith('http');
+---
+
+<li class={className}>
+  <a
+    href={project.href}
+    class="group block space-y-6"
+    target={isExternal ? '_blank' : undefined}
+    rel={isExternal ? 'noopener noreferrer' : undefined}
+  >
+    <Card
+      class="flex h-62 items-center justify-center overflow-hidden border p-0 shadow-xs transition-colors group-hover:border-foreground/20 xs:h-80"
+    >
+      <div class="relative size-full">
+        <img
+          src={project.image}
+          alt={project.name}
+          width="640"
+          height="320"
+          loading="lazy"
+          decoding="async"
+          class={cn(
+            'size-full object-cover transition-transform duration-300 group-hover:scale-105',
+            project.imageClassName,
+          )}
+        />
+      </div>
+    </Card>
+
+    <div class="space-y-3 px-3 md:px-6 lg:px-10.25">
+      <h3 class="flex items-center gap-3 text-lg leading-none">
+        {project.name}
+      </h3>
+      <p class="text-muted-foreground text-lg leading-7">{project.description}</p>
+    </div>
+  </a>
+</li>

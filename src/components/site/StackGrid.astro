@@ -1,0 +1,46 @@
+---
+import { cn } from '@/utils/cn';
+import AstroIcon from '@/components/site/icons/AstroIcon.astro';
+import PythonIcon from '@/components/site/icons/PythonIcon.astro';
+import ReactIcon from '@/components/site/icons/ReactIcon.astro';
+import SvelteIcon from '@/components/site/icons/SvelteIcon.astro';
+import TypeScriptIcon from '@/components/site/icons/TypeScriptIcon.astro';
+import type { StackItem } from '@/data/about';
+
+const icons = {
+  astro: AstroIcon,
+  svelte: SvelteIcon,
+  react: ReactIcon,
+  typescript: TypeScriptIcon,
+  python: PythonIcon,
+} as const;
+
+export interface Props {
+  title?: string;
+  items: StackItem[];
+  class?: string;
+}
+
+const { title = 'My stack', items, class: className } = Astro.props;
+---
+
+<section class={cn('space-y-10', className)}>
+  <h2 class="container text-2xl leading-none">{title}</h2>
+
+  <ul class="flex flex-wrap items-center gap-4.25 lg:justify-between">
+    {
+      items.map((item) => {
+        const Icon = icons[item.slug];
+        return (
+          <li
+            class="group bg-muted flex size-25 shrink-0 cursor-default items-center justify-center rounded-3xl"
+            title={item.name}
+          >
+            <Icon class="text-muted-foreground size-9 transition-colors group-hover:text-[var(--brand-color)]" />
+            <span class="sr-only">{item.name}</span>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>

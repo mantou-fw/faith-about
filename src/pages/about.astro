@@ -1,0 +1,90 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navbar from '@/components/site/Navbar.astro';
+import AboutHero from '@/components/site/AboutHero.astro';
+import FavoriteList from '@/components/site/FavoriteList.astro';
+import StackGrid from '@/components/site/StackGrid.astro';
+import ProjectTile from '@/components/site/ProjectTile.astro';
+import ArticleList from '@/components/site/ArticleList.astro';
+import ContributionFooter from '@/components/site/ContributionFooter.astro';
+import Container from '@/components/site/Container.astro';
+import Section from '@/components/site/Section.astro';
+import {
+  profile,
+  favoriteMovies,
+  favoriteCars,
+  stack,
+  projects,
+  articles,
+} from '@/data/about';
+
+export const prerender = true;
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  url: import.meta.env.SITE_URL ?? Astro.site?.href,
+  email: `mailto:${profile.email}`,
+  sameAs: [profile.github, profile.x],
+};
+---
+
+<BaseLayout
+  title="About me"
+  description={`About ${profile.name}, ${profile.role} based in ${profile.location}. Stack, projects and recent writing.`}
+  image="/og-image.jpg"
+  jsonLd={personSchema}
+>
+  <Navbar />
+
+  <main class="flex-1">
+    <AboutHero />
+
+    <Section>
+      <Container class="space-y-15 md:space-y-20">
+        <FavoriteList title="Favorite movies" items={favoriteMovies} />
+        <FavoriteList title="Favorite cars" items={favoriteCars} />
+      </Container>
+    </Section>
+
+    <Section>
+      <div class="mx-auto w-full max-w-[952px] space-y-25">
+        <StackGrid items={stack} />
+
+        <section class="space-y-10">
+          <div class="container flex items-center justify-between">
+            <h2 class="text-2xl leading-none">Currently building</h2>
+            <a href="https://htifa.com" class="link-underline text-lg leading-none">View all</a>
+          </div>
+
+          <ul class="grid gap-x-5 gap-y-10 md:grid-cols-2">
+            {projects.map((project) => <ProjectTile project={project} />)}
+          </ul>
+        </section>
+
+        <ArticleList articles={articles} />
+      </div>
+    </Section>
+  </main>
+
+  <ContributionFooter />
+</BaseLayout>
+
+<style is:global>
+  /* Fade the page edges, as the template does. */
+  @media (min-width: 48rem) {
+    main::after {
+      content: '';
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 30;
+      height: 4rem;
+      background: linear-gradient(to top, var(--background), transparent);
+      backdrop-filter: blur(2px);
+      pointer-events: none;
+    }
+  }
+</style>

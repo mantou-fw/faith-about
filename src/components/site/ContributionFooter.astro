@@ -1,0 +1,150 @@
+---
+import { contributions } from '@/data/contributions';
+
+/**
+ * GitHub contribution heatmap, rendered at build time.
+ *
+ * Week columns run Sunday-first to match GitHub; month labels are derived and
+ * thinned out so they never collide. The whole graph is one SVG so it scales
+ * with a single `viewBox` and needs no runtime.
+ */
+
+interface Props {
+  class?: string;
+  /** Hide on small screens, where the graph is unreadable anyway. */
+  hideBelow?: 'md' | 'lg';
+}
+
+const { class: className, hideBelow = 'md' } = Astro.props;
+
+// Build-time clock. The graph must not draw days that have not happened yet.
+const TODAY = new Date().toISOString().slice(0, 10);
+
+const BLOCK = 12;
+const MARGIN = 4.5;
+const RADIUS = 2.4;
+const LABEL_HEIGHT = 16;
+
+const byDate = new Map(contributions.map((d) => [d.date, d]));
+const first = new Date(`${contributions[0]!.date}T00:00:00Z`);
+// GitHub always returns a full trailing week, which runs past today. Clip so
+// the graph never renders future days.
+const lastDate = contributions.at(-1)!.date;
+const last =
+  lastDate > TODAY ? new Date(`${TODAY}T00:00:00Z`) : new Date(`${lastDate}T00:00:00Z`);
+const DAY = 86_400_000;
+
+// Pad to whole weeks — getUTCDay() is 0 for Sunday, so a Sunday first day needs
+// no padding and a Saturday last day needs none either.
+const start = new Date(first.getTime() - first.getUTCDay() * DAY);
+const end = new Date(last.getTime() + (6 - last.getUTCDay()) * DAY);
+
+const days: typeof contributions = [];
+for (let t = start.getTime(); t <= end.getTime(); t += DAY) {
+  const iso = new Date(t).toISOString().slice(0, 10);
+  days.push(byDate.get(iso) ?? { date: iso, count: 0, level: 0 as const });
+}
+
+const weeks: (typeof contributions)[] = [];
+for (let i = 0; i < days.length; i += 7) weeks.push(days.slice(i, i + 7));
+
+// A month label goes on the first week whose first day starts a new month, but
+// only if it is at least 3 weeks past the previous label.
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const monthLabels: { week: number; label: string }[] = [];
+weeks.forEach((week, index) => {
+  const firstOfWeek = week.find((d) => d);
+  if (!firstOfWeek) return;
+  const date = new Date(`${firstOfWeek.date}T00:00:00Z`);
+  const isFirstWeekOfMonth = date.getUTCDate() <= 7;
+  const previous = monthLabels.at(-1);
+  if (!isFirstWeekOfMonth) return;
+  if (previous && index - previous.week < 3) return;
+  monthLabels.push({ week: index, label: MONTHS[date.getUTCMonth()]! });
+});
+
+const width = weeks.length * (BLOCK + MARGIN) - MARGIN;
+const height = LABEL_HEIGHT + 7 * (BLOCK + MARGIN) - MARGIN;
+const total = contributions.reduce((sum, day) => sum + day.count, 0);
+
+const levelClass = [
+  'fill-muted',
+  'fill-muted-foreground/20',
+  'fill-muted-foreground/40',
+  'fill-muted-foreground/60',
+  'fill-muted-foreground/80',
+] as const;
+---
+
+<footer class="space-y-37.5 pb-16">
+  <div
+    class:list={[
+      'max-w-full flex-col gap-2',
+      hideBelow === 'md' ? 'hidden w-full md:flex' : 'hidden w-full lg:flex',
+      className,
+    ]}
+    style="font-size:12px"
+  >
+    <p class="text-muted-foreground">
+      <strong class="text-foreground font-medium">{total}</strong> contributions on GitHub in the last year
+    </p>
+
+    <div class="max-w-full overflow-x-auto">
+      <div class="min-w-full">
+        <svg
+          class="block w-full overflow-visible"
+          viewBox={`0 0 ${width} ${height}`}
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          aria-label={`GitHub contribution graph: ${total} contributions`}
+        >
+          <title>Contribution Graph</title>
+
+          <g class="fill-current">
+            {
+              monthLabels.map(({ week, label }) => (
+                <text
+                  x={(BLOCK + MARGIN) * week}
+                  y="0"
+                  dominant-baseline="hanging"
+                  font-size="10"
+                >
+                  {label}
+                </text>
+              ))
+            }
+          </g>
+
+          {
+            weeks.map((week, weekIndex) =>
+              week.map((day, dayIndex) =>
+                day ? (
+                  <rect
+                    class={levelClass[day.level]}
+                    data-count={day.count}
+                    data-date={day.date}
+                    data-level={day.level}
+                    x={(BLOCK + MARGIN) * weekIndex}
+                    y={LABEL_HEIGHT + (BLOCK + MARGIN) * dayIndex}
+                    width={BLOCK}
+                    height={BLOCK}
+                    rx={RADIUS}
+                    ry={RADIUS}
+                  >
+                    <title>{`${day.count} contribution${day.count === 1 ? '' : 's'} on ${day.date}`}</title>
+                  </rect>
+                ) : null,
+              ),
+            )
+          }
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-center">
+    <a href={`mailto:${import.meta.env.PUBLIC_CONTACT_EMAIL ?? 'mantou.fw@gmail.com'}`} class="link-underline text-lg">
+      {import.meta.env.PUBLIC_CONTACT_EMAIL ?? 'mantou.fw@gmail.com'}
+    </a>
+  </div>
+</footer>

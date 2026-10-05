@@ -1,0 +1,27 @@
+---
+/**
+ * Layout primitives that reproduce the template's container rhythm.
+ *
+ * The template ships three width steps:
+ *   .container        — 80rem (1280px) content column
+ *   .bigger-container  — 952px, for full-bleed media that must not get too wide
+ *   .hero-padding     — 60/80/120px vertical step
+ *   .section-padding  — 50/60/75px vertical step
+ */
+
+export interface Props {
+  as?: string;
+  size?: 'default' | 'wide' | 'media';
+  class?: string;
+}
+
+const { as: Tag = 'div', size = 'default', class: className } = Astro.props;
+
+const sizes = {
+  default: 'mx-auto w-full max-w-80rem px-4 md:px-5',
+  wide: 'mx-auto w-full max-w-[952px] px-4 md:px-5',
+  media: 'mx-auto w-full px-4 md:px-5',
+} as const;
+---
+
+<Tag class:list={[sizes[size], className]}><slot /></Tag>

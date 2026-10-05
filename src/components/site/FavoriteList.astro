@@ -1,0 +1,51 @@
+---
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui';
+import { cn } from '@/utils/cn';
+import type { Favorite } from '@/data/about';
+
+/**
+ * Favorite list with a floating image preview on hover.
+ *
+ * Each row owns its preview, so the positioning runtime measures against the
+ * right trigger and there is no cross-row state to keep in sync.
+ */
+export interface Props {
+  title: string;
+  items: Favorite[];
+  class?: string;
+}
+
+const { title, items, class: className } = Astro.props;
+---
+
+<div class={cn('relative grid gap-10 select-none md:grid-cols-2 md:gap-20', className)}>
+  <h2 class="text-2xl">{title}</h2>
+
+  <ul class="space-y-4">
+    {
+      items.map((item) => (
+        <li>
+          <Tooltip>
+            <TooltipTrigger class="link-underline cursor-pointer text-lg leading-none transition-opacity duration-300">
+              {item.label}
+            </TooltipTrigger>
+            <TooltipContent
+              side="right"
+              class="pointer-events-none h-45 w-70 overflow-hidden rounded-lg border-0 bg-transparent p-0 shadow-2xl"
+            >
+              <img
+                src={item.image}
+                alt={item.label}
+                width="280"
+                height="180"
+                loading="lazy"
+                decoding="async"
+                class="size-full object-cover"
+              />
+            </TooltipContent>
+          </Tooltip>
+        </li>
+      ))
+    }
+  </ul>
+</div>

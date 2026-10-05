@@ -1,0 +1,16 @@
+---
+export interface Props {
+  as?: string;
+  variant?: 'hero' | 'section';
+  class?: string;
+}
+
+const { as: Tag = 'section', variant = 'section', class: className } = Astro.props;
+
+const variants = {
+  hero: 'pb-12.5 pt-0 md:pb-15',
+  section: 'py-12.5 md:py-15 lg:py-18.75',
+} as const;
+---
+
+<Tag class:list={[variants[variant], className]}><slot /></Tag>
