@@ -9,6 +9,7 @@
 html {
   background: var(--background);
   color: var(--foreground);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -20,4 +21,59 @@ body {
 ::selection {
   background: var(--primary);
   color: var(--primary-foreground);
+}
+
+/* ---------------------------------------------------------------------------
+   Typography — Funnel Sans, the typeface the design calls for.
+   Two static cuts ship with the template: upright and italic.
+   --------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Funnel Sans";
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url("/fonts/53c9791758e212af.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Funnel Sans";
+  font-style: italic;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url("/fonts/b0f574a27e2e8d39.woff2") format("woff2");
+}
+
+@theme inline {
+  --font-sans: "Funnel Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Arial, sans-serif;
+}
+
+/* ---------------------------------------------------------------------------
+   link-underline — the dotted hover underline used by every text link.
+   --------------------------------------------------------------------------- */
+
+.link-underline {
+  text-decoration-line: underline;
+  text-decoration-color: var(--border);
+  text-decoration-style: dotted;
+  text-underline-offset: 4px;
+  transition:
+    text-decoration-color 0.3s,
+    text-underline-offset 0.3s;
+}
+
+.link-underline:hover {
+  text-decoration-color: var(--foreground);
+  text-underline-offset: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .link-underline {
+    transition: none;
+  }
 }
