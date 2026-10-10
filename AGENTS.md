@@ -61,14 +61,14 @@ Project MCP configuration:
 
 - Root config: `.mcp.json`
 - Astro Docs: https://mcp.docs.astro.build/mcp
-- Bearnie MCP: `npx @bearnie/mcp`
+- Bearnie MCP: `bunx @bearnie/mcp`
 
 ## Project stack
 
 - Astro 7
 - Cloudflare Workers via `@astrojs/cloudflare`
 - Tailwind CSS 4
-- npm
+- Bun (explicitly requested for this Echo implementation)
 - Bearnie as source-owned UI primitives
 - Impeccable for frontend design quality
 - Matt Pocock alignment/spec/review skills
@@ -79,23 +79,16 @@ Project MCP configuration:
 
 ## Package manager
 
-Use npm as the canonical package manager.
+The user explicitly changed the package-manager policy to Bun for the Echo implementation.
 
 ```bash
-npm install
-npm run dev
-npm run check
-npm run build
+bun install --frozen-lockfile
+bun run dev
+bun run check
+bun run build
 ```
 
-Rules:
-
-- Do not use pnpm, Yarn or Bun unless the user explicitly changes the project package-manager policy.
-- Do not add `pnpm-lock.yaml`, `yarn.lock` or `bun.lock*`.
-- Commit `package-lock.json` after a successful `npm install`.
-- When a valid `package-lock.json` exists, prefer `npm ci` in CI/deployment.
-- Pass arguments to npm scripts after `--`, e.g. `npm run ui:add -- dialog tabs`.
-- Use `npx` for one-off local CLI invocation when a package script does not already cover it.
+Commit `bun.lock`. Do not introduce another package-manager lockfile. Use `bunx` for local CLI invocation.
 
 ## UI architecture
 
@@ -145,8 +138,8 @@ The starter is i18n-ready, not multilingual by default. Do not enable locale-pre
 Before completing non-trivial work, run relevant validation such as:
 
 ```bash
-npm run check
-npm run build
+bun run check
+bun run build
 ```
 
 For meaningful UI work, use Impeccable detector when available.

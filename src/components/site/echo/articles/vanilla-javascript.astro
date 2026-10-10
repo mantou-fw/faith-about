@@ -1,0 +1,19 @@
+---
+import { restoreProps } from "@/utils/echo-props";
+import markup1 from '../../../../content/echo/articles/vanilla-javascript/01-markup.html?raw';
+import { ArticleHero } from '../../../echo/article-hero.js';
+import props2 from '../../../../content/echo/articles/vanilla-javascript/02-props.json';
+import markup3 from '../../../../content/echo/articles/vanilla-javascript/03-markup.html?raw';
+import { ArticlesList } from '../../../echo/latest-writing.js';
+import props4 from '../../../../content/echo/articles/vanilla-javascript/04-props.json';
+import { CodeBlockEnhancer } from '../../../echo/code-block-enhancer.js';
+import props5 from '../../../../content/echo/articles/vanilla-javascript/05-props.json';
+import markup6 from '../../../../content/echo/articles/vanilla-javascript/06-markup.html?raw';
+---
+
+<Fragment set:html={markup1} />
+<ArticleHero {...restoreProps(props2)} client:load />
+<Fragment set:html={markup3} />
+<ArticlesList {...restoreProps(props4)} client:load />
+<CodeBlockEnhancer {...restoreProps(props5)} client:load />
+<Fragment set:html={markup6} />

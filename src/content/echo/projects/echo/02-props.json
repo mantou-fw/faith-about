@@ -1,0 +1,11 @@
+{
+  "name": "Echo",
+  "liveUrl": "https://www.shadcnblocks.com/templates",
+  "sourceUrl": "https://www.shadcnblocks.com/templates",
+  "coverImage": "/images/projects/echo/cover.webp",
+  "longDescription": "Echo is a revolutionary audio platform that combines high-fidelity streaming with social features. It creates a space where audiophiles can discover new music, share their collections, and connect with others who share their passion for sound quality.",
+  "wrapperClassName": {
+    "$astroUndefined": true
+  },
+  "imageClassName": "object-[center_30%]"
+}

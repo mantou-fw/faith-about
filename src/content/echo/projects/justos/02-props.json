@@ -1,0 +1,11 @@
+{
+  "name": "JustOS",
+  "liveUrl": "https://www.shadcnblocks.com/templates",
+  "sourceUrl": "https://www.shadcnblocks.com/templates",
+  "coverImage": "/images/projects/justos/cover.svg",
+  "longDescription": "JustOS is a productivity operating system designed specifically for creators and makers. It combines task management, note-taking, and project planning into a unified workspace that adapts to how creative professionals actually work.",
+  "wrapperClassName": "size-24 [&_img]:dark:invert",
+  "imageClassName": {
+    "$astroUndefined": true
+  }
+}

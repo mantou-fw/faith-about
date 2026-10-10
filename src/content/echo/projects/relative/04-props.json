@@ -1,0 +1,46 @@
+{
+  "images": [
+    {
+      "src": "/images/projects/relative/01.webp",
+      "caption": "Family tree visualization",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 573,
+      "height": 80
+    },
+    {
+      "src": "/images/projects/relative/02.webp",
+      "caption": "Story timeline",
+      "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+      "width": 600,
+      "height": 240
+    },
+    {
+      "src": "/images/projects/relative/03.webp",
+      "caption": "Member profiles",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 210,
+      "height": 250
+    },
+    {
+      "src": "/images/projects/relative/04.webp",
+      "caption": "Photo albums",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 250,
+      "height": 234
+    },
+    {
+      "src": "/images/projects/relative/05.webp",
+      "caption": "Collaborative editing",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 488,
+      "height": 128
+    }
+  ],
+  "additionalDescription": "Family history is more than names and dates — it is stories, traditions, and connections that span generations. Relative was designed to capture all of that richness. Every feature encourages users to go beyond the basic tree and bring their ancestors to life.",
+  "highlights": [
+    "Created an interactive tree visualization supporting thousands of relatives",
+    "Built collaborative editing so families can build trees together",
+    "Implemented smart matching to suggest potential family connections",
+    "Designed a timeline view showing family events across generations"
+  ]
+}

@@ -1,0 +1,20 @@
+---
+import { restoreProps } from "@/utils/echo-props";
+import markup1 from '../../../../content/echo/projects/plasma/01-markup.html?raw';
+import { ProjectHero } from '../../../echo/project-sections.js';
+import props2 from '../../../../content/echo/projects/plasma/02-props.json';
+import { StackGrid } from '../../../echo/stack-grid.js';
+import props3 from '../../../../content/echo/projects/plasma/03-props.json';
+import { ProjectDetails } from '../../../echo/project-sections.js';
+import props4 from '../../../../content/echo/projects/plasma/04-props.json';
+import { MoreProjects } from '../../../echo/project-sections.js';
+import props5 from '../../../../content/echo/projects/plasma/05-props.json';
+import markup6 from '../../../../content/echo/projects/plasma/06-markup.html?raw';
+---
+
+<Fragment set:html={markup1} />
+<ProjectHero {...restoreProps(props2)} client:load />
+<StackGrid {...restoreProps(props3)} client:load />
+<ProjectDetails {...restoreProps(props4)} client:load />
+<MoreProjects {...restoreProps(props5)} client:load />
+<Fragment set:html={markup6} />

@@ -1,0 +1,14 @@
+{
+  "stack": [
+    "typescript",
+    "nextjs",
+    "tailwind",
+    "figma",
+    "nodejs",
+    "vercel",
+    "docker",
+    "flyio"
+  ],
+  "title": "Project stack",
+  "className": "hero-padding pt-0!"
+}

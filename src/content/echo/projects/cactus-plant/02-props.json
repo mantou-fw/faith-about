@@ -1,0 +1,13 @@
+{
+  "name": "Cactus Plant",
+  "liveUrl": "https://www.shadcnblocks.com/templates",
+  "sourceUrl": "https://www.shadcnblocks.com/templates",
+  "coverImage": "/images/projects/cactus-plant/cover.webp",
+  "longDescription": "Cactus Plant is a realtime collaboration framework for building multiplayer experiences. It abstracts away the complexity of conflict resolution, presence awareness, and state synchronization, letting developers focus on building features.",
+  "wrapperClassName": {
+    "$astroUndefined": true
+  },
+  "imageClassName": {
+    "$astroUndefined": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Plasma",
+  "liveUrl": "https://www.shadcnblocks.com/templates",
+  "sourceUrl": "https://www.shadcnblocks.com/templates",
+  "coverImage": "/images/projects/plasma/cover.webp",
+  "longDescription": "Plasma is a cutting-edge energy management system that helps businesses optimize their power consumption and reduce costs. Through intelligent monitoring, predictive analytics, and automated controls, it makes sustainable energy management effortless.",
+  "wrapperClassName": {
+    "$astroUndefined": true
+  },
+  "imageClassName": {
+    "$astroUndefined": true
+  }
+}

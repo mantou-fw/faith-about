@@ -1,0 +1,13 @@
+{
+  "name": "Sonic",
+  "liveUrl": "https://www.shadcnblocks.com/templates",
+  "sourceUrl": "https://www.shadcnblocks.com/templates",
+  "coverImage": "/images/projects/sonic/cover.webp",
+  "longDescription": "Sonic is a lightning-fast data processing engine built for real-time analytics. It handles massive datasets with ease, delivering insights in milliseconds rather than minutes. Perfect for applications where speed is critical.",
+  "wrapperClassName": {
+    "$astroUndefined": true
+  },
+  "imageClassName": {
+    "$astroUndefined": true
+  }
+}

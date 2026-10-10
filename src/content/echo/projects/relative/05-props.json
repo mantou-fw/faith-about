@@ -1,0 +1,145 @@
+{
+  "projects": [
+    {
+      "id": "14",
+      "name": "Bloom",
+      "slug": "bloom",
+      "description": "Sustainable beauty brand",
+      "href": "#",
+      "image": "/images/projects/bloom/cover.webp",
+      "imageClassName": "object-[center_40%]",
+      "category": "personal",
+      "liveUrl": "https://www.shadcnblocks.com/templates",
+      "sourceUrl": "https://www.shadcnblocks.com/templates",
+      "longDescription": "Bloom is a sustainable beauty brand platform that connects eco-conscious consumers with clean beauty products. It combines e-commerce with education, helping customers make informed choices about what they put on their skin.",
+      "additionalDescription": "The beauty industry is full of greenwashing and misleading claims. Bloom was built to cut through the noise with transparent ingredient lists, verified sustainability credentials, and honest product reviews. Trust is the foundation of everything we built.",
+      "stack": [
+        "typescript",
+        "nextjs",
+        "tailwind",
+        "figma",
+        "nodejs",
+        "vercel",
+        "docker",
+        "flyio"
+      ],
+      "images": [
+        {
+          "src": "/images/projects/bloom/01.webp",
+          "caption": "Product showcase",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 573,
+          "height": 80
+        },
+        {
+          "src": "/images/projects/bloom/02.webp",
+          "caption": "Ingredient analyzer",
+          "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+          "width": 600,
+          "height": 240
+        },
+        {
+          "src": "/images/projects/bloom/03.webp",
+          "caption": "Brand system",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 210,
+          "height": 250
+        },
+        {
+          "src": "/images/projects/bloom/04.webp",
+          "caption": "Visual identity",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 250,
+          "height": 234
+        },
+        {
+          "src": "/images/projects/bloom/05.webp",
+          "caption": "Shopping experience",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 488,
+          "height": 128
+        }
+      ],
+      "highlights": [
+        "Built an ingredient transparency system with safety ratings",
+        "Created a product comparison tool for informed purchasing",
+        "Implemented sustainability scoring based on verified criteria",
+        "Designed a community reviews system with verified purchases"
+      ],
+      "moreProjects": [
+        "relative",
+        "plasma"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Stellar",
+      "slug": "stellar",
+      "description": "Modern space exploration platform",
+      "href": "#",
+      "image": "/images/projects/stellar/cover.webp",
+      "category": "personal",
+      "liveUrl": "https://www.shadcnblocks.com/templates",
+      "sourceUrl": "https://www.shadcnblocks.com/templates",
+      "longDescription": "Stellar is a comprehensive platform for space exploration and astronomy enthusiasts. It brings the cosmos closer with interactive visualizations, real-time satellite tracking, and educational content that makes astronomy accessible to everyone.",
+      "additionalDescription": "Space has always fascinated me, and Stellar was my way of sharing that passion. The challenge was taking complex astronomical data and presenting it in a way that feels magical rather than overwhelming. Every visualization is designed to inspire wonder while remaining scientifically accurate.",
+      "stack": [
+        "typescript",
+        "nextjs",
+        "tailwind",
+        "figma",
+        "nodejs",
+        "vercel",
+        "docker",
+        "flyio"
+      ],
+      "images": [
+        {
+          "src": "/images/projects/stellar/01.webp",
+          "caption": "Solar system visualization",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 573,
+          "height": 80
+        },
+        {
+          "src": "/images/projects/stellar/02.webp",
+          "caption": "Star map interface",
+          "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+          "width": 600,
+          "height": 240
+        },
+        {
+          "src": "/images/projects/stellar/03.webp",
+          "caption": "Mission control dashboard",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 210,
+          "height": 250
+        },
+        {
+          "src": "/images/projects/stellar/04.webp",
+          "caption": "Data overview",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 250,
+          "height": 234
+        },
+        {
+          "src": "/images/projects/stellar/05.webp",
+          "caption": "3D rendering engine",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 488,
+          "height": 128
+        }
+      ],
+      "highlights": [
+        "Created interactive 3D visualizations using Three.js and WebGL",
+        "Integrated NASA and ESA APIs for real-time space data",
+        "Built a custom physics engine for accurate orbital mechanics",
+        "Designed an educational mode with guided tours of the solar system"
+      ],
+      "moreProjects": [
+        "plasma",
+        "relative"
+      ]
+    }
+  ]
+}

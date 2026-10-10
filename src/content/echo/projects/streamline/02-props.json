@@ -1,0 +1,11 @@
+{
+  "name": "Streamline",
+  "liveUrl": "https://www.shadcnblocks.com/templates",
+  "sourceUrl": "https://www.shadcnblocks.com/templates",
+  "coverImage": "/images/projects/streamline/cover.webp",
+  "longDescription": "Streamline automates your business processes by connecting your tools and eliminating repetitive tasks. With a visual workflow builder and hundreds of integrations, it empowers teams to focus on work that matters.",
+  "wrapperClassName": {
+    "$astroUndefined": true
+  },
+  "imageClassName": "object-[center_35%]"
+}

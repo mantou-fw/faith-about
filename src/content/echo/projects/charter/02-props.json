@@ -1,0 +1,13 @@
+{
+  "name": "Charter",
+  "liveUrl": "https://www.shadcnblocks.com/templates",
+  "sourceUrl": "https://www.shadcnblocks.com/templates",
+  "coverImage": "/images/projects/charter/cover.webp",
+  "longDescription": "Charter democratizes legal services by making contract creation, review, and management accessible to everyone. Using AI-powered analysis, it helps individuals and small businesses understand legal documents without expensive attorney fees.",
+  "wrapperClassName": {
+    "$astroUndefined": true
+  },
+  "imageClassName": {
+    "$astroUndefined": true
+  }
+}

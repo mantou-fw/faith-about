@@ -1,13 +1,13 @@
 import type { APIContext } from 'astro';
-import type { SitemapItemLoose } from 'sitemap';
+import { EnumChangefreq, type SitemapItemLoose } from 'sitemap';
 
-const staticEntries: SitemapItemLoose[] = [
-  {
-    url: '/',
-    changefreq: 'weekly',
-    priority: 1,
-  },
-];
+import echoRoutes from '../content/echo/routes.json';
+
+const staticEntries: SitemapItemLoose[] = echoRoutes.map(({ path }) => ({
+  url: path,
+  changefreq: EnumChangefreq.WEEKLY,
+  priority: path === '/' ? 1 : 0.7,
+}));
 
 /**
  * Add runtime-backed URLs here.

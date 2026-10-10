@@ -1,0 +1,144 @@
+{
+  "projects": [
+    {
+      "id": "6",
+      "name": "Neobase",
+      "slug": "neobase",
+      "description": "Next-generation database solution",
+      "href": "#",
+      "image": "/images/projects/neobase/cover.webp",
+      "category": "open-source",
+      "liveUrl": "https://www.shadcnblocks.com/templates",
+      "sourceUrl": "https://www.shadcnblocks.com/templates",
+      "longDescription": "Neobase is a next-generation database solution that combines the flexibility of NoSQL with the reliability of traditional relational databases. It is designed for modern applications that need to scale without compromising on data integrity.",
+      "additionalDescription": "Building a database from scratch taught me more about computer science fundamentals than any course ever could. From implementing B-trees to designing a query optimizer, every component required deep understanding of data structures and algorithms. The result is a database that is both powerful and approachable.",
+      "stack": [
+        "typescript",
+        "nextjs",
+        "tailwind",
+        "figma",
+        "nodejs",
+        "vercel",
+        "docker",
+        "flyio"
+      ],
+      "images": [
+        {
+          "src": "/images/projects/neobase/01.webp",
+          "caption": "Query interface",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 573,
+          "height": 80
+        },
+        {
+          "src": "/images/projects/neobase/02.webp",
+          "caption": "Performance dashboard",
+          "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+          "width": 600,
+          "height": 240
+        },
+        {
+          "src": "/images/projects/neobase/03.webp",
+          "caption": "Schema explorer",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 210,
+          "height": 250
+        },
+        {
+          "src": "/images/projects/neobase/04.webp",
+          "caption": "Storage engine",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 250,
+          "height": 234
+        },
+        {
+          "src": "/images/projects/neobase/05.webp",
+          "caption": "Query analytics",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 488,
+          "height": 128
+        }
+      ],
+      "highlights": [
+        "Designed a hybrid storage engine supporting both document and relational models",
+        "Implemented ACID transactions with optimistic concurrency control",
+        "Built a query language that combines SQL familiarity with JSON flexibility",
+        "Created automatic indexing based on query pattern analysis"
+      ],
+      "moreProjects": [
+        "sonic",
+        "scalar"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Sonic",
+      "slug": "sonic",
+      "description": "High-speed data processing",
+      "href": "#",
+      "image": "/images/projects/sonic/cover.webp",
+      "category": "personal",
+      "liveUrl": "https://www.shadcnblocks.com/templates",
+      "sourceUrl": "https://www.shadcnblocks.com/templates",
+      "longDescription": "Sonic is a lightning-fast data processing engine built for real-time analytics. It handles massive datasets with ease, delivering insights in milliseconds rather than minutes. Perfect for applications where speed is critical.",
+      "additionalDescription": "Performance was not just a feature for Sonic — it was the entire product. Every line of code was scrutinized for efficiency. We used memory-mapped files, SIMD instructions, and custom data structures to squeeze every bit of performance from the hardware.",
+      "stack": [
+        "typescript",
+        "nextjs",
+        "tailwind",
+        "figma",
+        "nodejs",
+        "vercel",
+        "docker",
+        "flyio"
+      ],
+      "images": [
+        {
+          "src": "/images/projects/sonic/01.webp",
+          "caption": "Processing pipeline",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 573,
+          "height": 80
+        },
+        {
+          "src": "/images/projects/sonic/02.webp",
+          "caption": "Performance metrics",
+          "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+          "width": 600,
+          "height": 240
+        },
+        {
+          "src": "/images/projects/sonic/03.webp",
+          "caption": "Query optimizer",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 210,
+          "height": 250
+        },
+        {
+          "src": "/images/projects/sonic/04.webp",
+          "caption": "Analytics dashboard",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 250,
+          "height": 234
+        },
+        {
+          "src": "/images/projects/sonic/05.webp",
+          "caption": "Distributed processing",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 488,
+          "height": 128
+        }
+      ],
+      "highlights": [
+        "Achieved sub-millisecond query latency on billion-row datasets",
+        "Built a columnar storage engine optimized for analytical queries",
+        "Implemented vectorized query execution for maximum throughput",
+        "Created a distributed architecture for horizontal scaling"
+      ],
+      "moreProjects": [
+        "neobase",
+        "cactus-plant"
+      ]
+    }
+  ]
+}

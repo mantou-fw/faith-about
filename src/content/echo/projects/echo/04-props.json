@@ -1,0 +1,46 @@
+{
+  "images": [
+    {
+      "src": "/images/projects/echo/01.webp",
+      "caption": "Terms and conditions component",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 573,
+      "height": 80
+    },
+    {
+      "src": "/images/projects/echo/02.webp",
+      "caption": "Data table with user management",
+      "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+      "width": 600,
+      "height": 240
+    },
+    {
+      "src": "/images/projects/echo/03.webp",
+      "caption": "Select dropdown component",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 210,
+      "height": 250
+    },
+    {
+      "src": "/images/projects/echo/04.webp",
+      "caption": "Context menu component",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 250,
+      "height": 234
+    },
+    {
+      "src": "/images/projects/echo/05.webp",
+      "caption": "Toast notification component",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 488,
+      "height": 128
+    }
+  ],
+  "additionalDescription": "Audio quality is often sacrificed for convenience in modern streaming. Echo was built on the premise that listeners should not have to choose. We developed custom audio codecs and adaptive streaming that deliver studio-quality sound without buffering, even on slower connections.",
+  "highlights": [
+    "Developed lossless audio streaming with adaptive bitrate",
+    "Built a social graph connecting listeners with similar tastes",
+    "Created a custom audio visualizer using Web Audio API",
+    "Implemented gapless playback for seamless album listening"
+  ]
+}

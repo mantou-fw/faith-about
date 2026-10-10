@@ -1,7 +1,11 @@
 ---
 import { SEO } from 'astro-seo';
 import GoogleTag from '../components/GoogleTag.astro';
-import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import Header from '@/components/site/echo/Header.astro';
+import Footer from '@/components/site/echo/Footer.astro';
+import { TooltipProvider } from '@/components/ui/echo/index.js';
+import '../styles/echo-fonts.css';
 
 interface Props {
   title: string;
@@ -16,18 +20,18 @@ const {
   title,
   description,
   canonical,
-  image,
+  image = "/og-image.jpg",
   noindex = false,
   jsonLd,
 } = Astro.props;
 
-const siteName = import.meta.env.PUBLIC_SITE_NAME ?? 'Astro Starter';
+const siteName = import.meta.env.PUBLIC_SITE_NAME ?? 'Echo';
 const site = Astro.site ?? new URL('https://example.com');
 const canonicalUrl = canonical
   ? new URL(canonical, site).href
   : new URL(Astro.url.pathname, site).href;
 const imageUrl = image ? new URL(image, site).href : undefined;
-const pageTitle = title.includes(siteName) ? title : title + ' | ' + siteName;
+const pageTitle = title;
 const structuredData =
   jsonLd ??
   {
@@ -75,10 +79,25 @@ const structuredData =
       set:html={JSON.stringify(structuredData)}
     ></script>
 
+    <link rel="stylesheet" href="/echo.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+    <ClientRouter />
+    <script is:inline data-astro-rerun>
+      (() => {
+        try {
+          document.documentElement.classList.toggle('dark', localStorage.getItem('theme') === 'dark');
+        } catch {}
+      })();
+    </script>
     <GoogleTag />
     <slot name="head" />
   </head>
-  <body class="min-h-screen bg-white text-neutral-950 antialiased">
-    <slot />
+  <body class="flex min-h-screen flex-col antialiased">
+    <TooltipProvider delayDuration={300} client:load>
+      <Header />
+      <slot />
+      <Footer />
+    </TooltipProvider>
   </body>
 </html>

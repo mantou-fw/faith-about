@@ -1,0 +1,26 @@
+---
+import { restoreProps } from "@/utils/echo-props";
+import markup1 from '../../../content/echo/home/01-markup.html?raw';
+import Hero from '../../echo/hero.js';
+import props2 from '../../../content/echo/home/02-props.json';
+import SelectedWork from '../../echo/selected-work.js';
+import props3 from '../../../content/echo/home/03-props.json';
+import { StackGrid } from '../../echo/stack-grid.js';
+import props4 from '../../../content/echo/home/04-props.json';
+import About from '../../echo/about.js';
+import props5 from '../../../content/echo/home/05-props.json';
+import Experience from '../../echo/experience.js';
+import props6 from '../../../content/echo/home/06-props.json';
+import { ArticlesList } from '../../echo/latest-writing.js';
+import props7 from '../../../content/echo/home/07-props.json';
+import markup8 from '../../../content/echo/home/08-markup.html?raw';
+---
+
+<Fragment set:html={markup1} />
+<Hero {...restoreProps(props2)} client:load />
+<SelectedWork {...restoreProps(props3)} client:load />
+<StackGrid {...restoreProps(props4)} client:load />
+<About {...restoreProps(props5)} client:load />
+<Experience {...restoreProps(props6)} client:load />
+<ArticlesList {...restoreProps(props7)} client:load />
+<Fragment set:html={markup8} />

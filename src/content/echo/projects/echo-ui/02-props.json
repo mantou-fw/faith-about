@@ -1,0 +1,11 @@
+{
+  "name": "Echo UI v3",
+  "liveUrl": "https://www.shadcnblocks.com/templates",
+  "sourceUrl": "https://www.shadcnblocks.com/templates",
+  "coverImage": "/images/projects/echo-ui/cover.webp",
+  "longDescription": "Echo UI is a comprehensive component library and design system built for modern web applications. It provides a cohesive set of accessible, customizable components that help teams ship beautiful interfaces faster while maintaining consistency across their products.",
+  "wrapperClassName": {
+    "$astroUndefined": true
+  },
+  "imageClassName": "object-[center_20%]"
+}

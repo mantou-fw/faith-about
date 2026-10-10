@@ -1,0 +1,11 @@
+---
+import { restoreProps } from "@/utils/echo-props";
+import markup1 from '../../../content/echo/projects/01-markup.html?raw';
+import ProjectsTabs from '../../echo/projects-tabs.js';
+import props2 from '../../../content/echo/projects/02-props.json';
+import markup3 from '../../../content/echo/projects/03-markup.html?raw';
+---
+
+<Fragment set:html={markup1} />
+<ProjectsTabs {...restoreProps(props2)} client:load />
+<Fragment set:html={markup3} />

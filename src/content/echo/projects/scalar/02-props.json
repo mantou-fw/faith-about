@@ -1,0 +1,11 @@
+{
+  "name": "Scalar",
+  "liveUrl": "https://www.shadcnblocks.com/templates",
+  "sourceUrl": "https://www.shadcnblocks.com/templates",
+  "coverImage": "/images/projects/scalar/cover.webp",
+  "longDescription": "Scalar creates beautiful, interactive API documentation that developers love. It makes it easy to create, maintain, and share comprehensive API documentation with your team, transforming OpenAPI specs into stunning documentation pages.",
+  "wrapperClassName": {
+    "$astroUndefined": true
+  },
+  "imageClassName": "object-[center_25%]"
+}

@@ -1,0 +1,29 @@
+---
+import { restoreProps } from "@/utils/echo-props";
+import markup1 from '../../../content/echo/about/01-markup.html?raw';
+import AboutHero from '../../echo/about-hero.js';
+import props2 from '../../../content/echo/about/02-props.json';
+import AboutFavorites from '../../echo/about-favorites.js';
+import props3 from '../../../content/echo/about/03-props.json';
+import { StackGrid } from '../../echo/stack-grid.js';
+import props4 from '../../../content/echo/about/04-props.json';
+import markup5 from '../../../content/echo/about/05-markup.html?raw';
+import { ProjectCard } from '../../echo/project-card.js';
+import props6 from '../../../content/echo/about/06-props.json';
+import props7 from '../../../content/echo/about/07-props.json';
+import markup8 from '../../../content/echo/about/08-markup.html?raw';
+import { ArticlesList } from '../../echo/latest-writing.js';
+import props9 from '../../../content/echo/about/09-props.json';
+import markup10 from '../../../content/echo/about/10-markup.html?raw';
+---
+
+<Fragment set:html={markup1} />
+<AboutHero {...restoreProps(props2)} client:load />
+<AboutFavorites {...restoreProps(props3)} client:load />
+<StackGrid {...restoreProps(props4)} client:load />
+<Fragment set:html={markup5} />
+<ProjectCard {...restoreProps(props6)} client:load />
+<ProjectCard {...restoreProps(props7)} client:load />
+<Fragment set:html={markup8} />
+<ArticlesList {...restoreProps(props9)} client:load />
+<Fragment set:html={markup10} />

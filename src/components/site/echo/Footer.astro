@@ -1,0 +1,9 @@
+---
+import { restoreProps } from "@/utils/echo-props";
+import Footer from '../../echo/footer.js';
+import props1 from '../../../content/echo/footer/01-props.json';
+import markup2 from '../../../content/echo/footer/02-markup.html?raw';
+---
+
+<Footer {...restoreProps(props1)} client:load />
+<Fragment set:html={markup2} />

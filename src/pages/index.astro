@@ -1,13 +1,8 @@
 ---
-import Hero from "@/components/site/Hero.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
-
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import EchoContent from '@/components/site/echo/home.astro';
 export const prerender = true;
 ---
-
-<BaseLayout
-  title="Astro Cloudflare Starter"
-  description="Astro starter with Cloudflare Workers, Tailwind CSS, Bearnie UI, SEO, runtime sitemap, Partytown, Google Tag and pnpm."
->
-  <Hero />
+<BaseLayout title="Echo - Modern Astro Template" description="John's portfolio — full-stack developer building things from idea to launch.">
+  <EchoContent />
 </BaseLayout>

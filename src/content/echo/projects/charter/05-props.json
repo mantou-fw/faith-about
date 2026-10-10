@@ -1,0 +1,146 @@
+{
+  "projects": [
+    {
+      "id": "12",
+      "name": "Streamline",
+      "slug": "streamline",
+      "description": "Workflow automation suite",
+      "href": "#",
+      "image": "/images/projects/streamline/cover.webp",
+      "imageClassName": "object-[center_35%]",
+      "category": "personal",
+      "liveUrl": "https://www.shadcnblocks.com/templates",
+      "sourceUrl": "https://www.shadcnblocks.com/templates",
+      "longDescription": "Streamline automates your business processes by connecting your tools and eliminating repetitive tasks. With a visual workflow builder and hundreds of integrations, it empowers teams to focus on work that matters.",
+      "additionalDescription": "Automation should feel empowering, not intimidating. We designed Streamline with non-technical users in mind, using visual metaphors and natural language descriptions that make complex workflows accessible. The goal was to give everyone superpowers.",
+      "stack": [
+        "typescript",
+        "nextjs",
+        "tailwind",
+        "figma",
+        "nodejs",
+        "vercel",
+        "docker",
+        "flyio"
+      ],
+      "images": [
+        {
+          "src": "/images/projects/streamline/01.webp",
+          "caption": "Workflow builder",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 573,
+          "height": 80
+        },
+        {
+          "src": "/images/projects/streamline/02.webp",
+          "caption": "Integration library",
+          "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+          "width": 600,
+          "height": 240
+        },
+        {
+          "src": "/images/projects/streamline/03.webp",
+          "caption": "Automation templates",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 210,
+          "height": 250
+        },
+        {
+          "src": "/images/projects/streamline/04.webp",
+          "caption": "Execution dashboard",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 250,
+          "height": 234
+        },
+        {
+          "src": "/images/projects/streamline/05.webp",
+          "caption": "Workflow analytics",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 488,
+          "height": 128
+        }
+      ],
+      "highlights": [
+        "Built a visual workflow editor with drag-and-drop simplicity",
+        "Created 200+ pre-built integrations with popular business tools",
+        "Implemented conditional logic and branching for complex workflows",
+        "Designed a monitoring dashboard with detailed execution logs"
+      ],
+      "moreProjects": [
+        "charter",
+        "justos"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "JustOS",
+      "slug": "justos",
+      "description": "Productivity OS for Creators",
+      "href": "#",
+      "image": "/images/projects/justos/cover.svg",
+      "wrapperClassName": "size-24 [&_img]:dark:invert",
+      "category": "featured",
+      "liveUrl": "https://www.shadcnblocks.com/templates",
+      "sourceUrl": "https://www.shadcnblocks.com/templates",
+      "longDescription": "JustOS is a productivity operating system designed specifically for creators and makers. It combines task management, note-taking, and project planning into a unified workspace that adapts to how creative professionals actually work.",
+      "additionalDescription": "The biggest challenge with JustOS was balancing flexibility with simplicity. Creators need tools that can adapt to their unique workflows, but they also need to be able to start working immediately without a steep learning curve. We solved this with a modular architecture that reveals complexity gradually.",
+      "stack": [
+        "typescript",
+        "nextjs",
+        "tailwind",
+        "figma",
+        "nodejs",
+        "vercel",
+        "docker",
+        "flyio"
+      ],
+      "images": [
+        {
+          "src": "/images/projects/justos/01.webp",
+          "caption": "JustOS workspace",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 573,
+          "height": 80
+        },
+        {
+          "src": "/images/projects/justos/02.webp",
+          "caption": "Project dashboard",
+          "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+          "width": 600,
+          "height": 240
+        },
+        {
+          "src": "/images/projects/justos/03.webp",
+          "caption": "Clean interface design",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 210,
+          "height": 250
+        },
+        {
+          "src": "/images/projects/justos/04.webp",
+          "caption": "Task management",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 250,
+          "height": 234
+        },
+        {
+          "src": "/images/projects/justos/05.webp",
+          "caption": "Note-taking interface",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 488,
+          "height": 128
+        }
+      ],
+      "highlights": [
+        "Designed a modular workspace system with customizable layouts",
+        "Built real-time collaboration features using WebSockets",
+        "Implemented offline-first architecture with automatic sync",
+        "Created a plugin system for extending functionality"
+      ],
+      "moreProjects": [
+        "happy-stats",
+        "streamline"
+      ]
+    }
+  ]
+}

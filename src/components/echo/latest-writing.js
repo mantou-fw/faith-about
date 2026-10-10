@@ -1,0 +1,14 @@
+import { j as e } from "./jsx-runtime.js";
+import { r as p } from "./react-runtime.js";
+import { c as i } from "./utils.js";
+import { m as a } from "./proxy.js";
+import { A as u } from "./presence.js";
+import { c as l } from "./createLucideIcon.js";
+const g = [["path", { d: "M5 12h14", key: "1ays0h" }], ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]], f = l("arrow-right", g);
+const j = [["path", { d: "M12 17v5", key: "bb1du9" }], ["path", { d: "M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z", key: "1nkz8b" }]], v = l("pin", j);
+function A({ articles: n, showHeader: o = false, showPinIcon: d = false, showReadAllLink: c = true, headerTitle: m = "Latest writing", className: x = "" }) {
+  const [h, r] = p.useState(null);
+  return e.jsxs("section", { className: i("section-padding bigger-container space-y-10", x), children: [o && e.jsxs("div", { className: "flex items-center justify-between md:container", children: [e.jsx("h2", { className: "text-2xl leading-none", children: m }), c && e.jsx("a", { href: "/articles", className: "link-underline text-lg", children: "Read all" })] }), e.jsx("ul", { className: "divide-y rounded-3xl border shadow-xs", onMouseLeave: () => r(null), children: n.map((s, t) => e.jsxs(a.li, { initial: "idle", whileHover: "hover", className: i("relative first:rounded-t-3xl last:rounded-b-3xl"), onMouseEnter: () => r(t), children: [e.jsx(u, { children: h === t && e.jsx(a.div, { layoutId: "article-hover-bg", className: i("bg-muted/30 absolute inset-0", t === 0 && "rounded-t-3xl", t === n.length - 1 && "rounded-b-3xl"), initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, transition: { type: "spring", stiffness: 300, damping: 30 } }) }), e.jsxs("a", { href: `/articles/${s.slug}`, className: "relative z-10 flex items-start justify-between gap-6 p-10", children: [e.jsxs("div", { className: "space-y-5", children: [e.jsxs("div", { className: "flex items-center gap-3", children: [d && s.pinned && e.jsx(a.div, { variants: { idle: { rotate: 0 }, hover: { rotate: -20 } }, transition: { type: "spring", stiffness: 300, damping: 20 }, children: e.jsx(v, { className: "text-foreground size-5" }) }), e.jsx("h3", { className: "text-lg leading-none", children: s.title })] }), e.jsx("p", { className: "text-muted-foreground text-base leading-7", children: s.description }), e.jsx("span", { className: "text-base leading-6", children: new Date(s.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) })] }), e.jsx(a.div, { variants: { idle: { x: 0 }, hover: { x: 6 } }, children: e.jsx(f, { className: "size-5 shrink-0" }) })] })] }, s.slug)) })] });
+}
+
+export { A as ArticlesList };

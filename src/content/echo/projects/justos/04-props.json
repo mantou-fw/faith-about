@@ -1,0 +1,46 @@
+{
+  "images": [
+    {
+      "src": "/images/projects/justos/01.webp",
+      "caption": "JustOS workspace",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 573,
+      "height": 80
+    },
+    {
+      "src": "/images/projects/justos/02.webp",
+      "caption": "Project dashboard",
+      "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+      "width": 600,
+      "height": 240
+    },
+    {
+      "src": "/images/projects/justos/03.webp",
+      "caption": "Clean interface design",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 210,
+      "height": 250
+    },
+    {
+      "src": "/images/projects/justos/04.webp",
+      "caption": "Task management",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 250,
+      "height": 234
+    },
+    {
+      "src": "/images/projects/justos/05.webp",
+      "caption": "Note-taking interface",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 488,
+      "height": 128
+    }
+  ],
+  "additionalDescription": "The biggest challenge with JustOS was balancing flexibility with simplicity. Creators need tools that can adapt to their unique workflows, but they also need to be able to start working immediately without a steep learning curve. We solved this with a modular architecture that reveals complexity gradually.",
+  "highlights": [
+    "Designed a modular workspace system with customizable layouts",
+    "Built real-time collaboration features using WebSockets",
+    "Implemented offline-first architecture with automatic sync",
+    "Created a plugin system for extending functionality"
+  ]
+}

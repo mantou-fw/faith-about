@@ -53,18 +53,18 @@ These components compose `@/components/ui`. They must not reach directly into `@
 7. Business/product behavior belongs in site/feature components.
 8. Use `cn()` from `@/utils/cn` for class composition.
 9. Keep `@/components/ui` small and intentional; do not export all Bearnie components automatically.
-10. Run `npm run ui:diff` before updating vendor primitives that have local changes.
+10. Run `bun run ui:diff` before updating vendor primitives that have local changes.
 
 ## CLI workflow
 
 ```bash
-npm run ui:list
-npm run ui:add -- dialog tabs tooltip
-npm run ui:diff
-npm run ui:update
+bun run ui:list
+bun run ui:add -- dialog tabs tooltip
+bun run ui:diff
+bun run ui:update
 ```
 
-After `npm run ui:add -- <component>`, export the required primitives from `src/components/ui/index.ts` before using them elsewhere.
+After `bun run ui:add -- <component>`, export the required primitives from `src/components/ui/index.ts` before using them elsewhere.
 
 ## Theme
 
@@ -79,7 +79,7 @@ It is imported by `src/styles/global.css` after Tailwind.
 To switch theme:
 
 ```bash
-npx bearnie add styles-slate-blue --overwrite
+bunx bearnie add styles-slate-blue --overwrite
 ```
 
 Review and commit the theme change like any other design-system change.
@@ -93,3 +93,7 @@ Use Impeccable to decide hierarchy, information density, spacing rhythm, typogra
 Use Bearnie to implement reusable primitives after the design decision is clear.
 
 Impeccable should not encourage bypassing the `@/components/ui` boundary or duplicating a Bearnie primitive.
+
+## Echo React islands
+
+The requested Echo template recovers existing React/Radix controls. React islands cannot render Astro-only Bearnie components. Their recovered controls live in `src/components/ui/echo/`, with an explicit public API in its `index.js`. Echo site modules use that API. The existing Bearnie layer and Astro-facing UI API remain available for future native Astro UI.

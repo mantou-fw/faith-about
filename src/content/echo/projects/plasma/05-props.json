@@ -1,0 +1,144 @@
+{
+  "projects": [
+    {
+      "id": "5",
+      "name": "Stellar",
+      "slug": "stellar",
+      "description": "Modern space exploration platform",
+      "href": "#",
+      "image": "/images/projects/stellar/cover.webp",
+      "category": "personal",
+      "liveUrl": "https://www.shadcnblocks.com/templates",
+      "sourceUrl": "https://www.shadcnblocks.com/templates",
+      "longDescription": "Stellar is a comprehensive platform for space exploration and astronomy enthusiasts. It brings the cosmos closer with interactive visualizations, real-time satellite tracking, and educational content that makes astronomy accessible to everyone.",
+      "additionalDescription": "Space has always fascinated me, and Stellar was my way of sharing that passion. The challenge was taking complex astronomical data and presenting it in a way that feels magical rather than overwhelming. Every visualization is designed to inspire wonder while remaining scientifically accurate.",
+      "stack": [
+        "typescript",
+        "nextjs",
+        "tailwind",
+        "figma",
+        "nodejs",
+        "vercel",
+        "docker",
+        "flyio"
+      ],
+      "images": [
+        {
+          "src": "/images/projects/stellar/01.webp",
+          "caption": "Solar system visualization",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 573,
+          "height": 80
+        },
+        {
+          "src": "/images/projects/stellar/02.webp",
+          "caption": "Star map interface",
+          "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+          "width": 600,
+          "height": 240
+        },
+        {
+          "src": "/images/projects/stellar/03.webp",
+          "caption": "Mission control dashboard",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 210,
+          "height": 250
+        },
+        {
+          "src": "/images/projects/stellar/04.webp",
+          "caption": "Data overview",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 250,
+          "height": 234
+        },
+        {
+          "src": "/images/projects/stellar/05.webp",
+          "caption": "3D rendering engine",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 488,
+          "height": 128
+        }
+      ],
+      "highlights": [
+        "Created interactive 3D visualizations using Three.js and WebGL",
+        "Integrated NASA and ESA APIs for real-time space data",
+        "Built a custom physics engine for accurate orbital mechanics",
+        "Designed an educational mode with guided tours of the solar system"
+      ],
+      "moreProjects": [
+        "plasma",
+        "relative"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Happy Stats",
+      "slug": "happy-stats",
+      "description": "Lightweight analytics dashboard",
+      "href": "#",
+      "image": "/images/projects/happy-stats/cover.webp",
+      "category": "featured",
+      "liveUrl": "https://www.shadcnblocks.com/templates",
+      "sourceUrl": "https://www.shadcnblocks.com/templates",
+      "longDescription": "Happy Stats is a lightweight analytics dashboard built for developers who want clear insights without complex setup. It visualizes metrics like commits, deployments, and project activity in a fast, privacy-friendly way.",
+      "additionalDescription": "Beyond the technical build, Happy Stats was also an exercise in product thinking. I wanted to design analytics that developers would actually enjoy using — clear typography, instant feedback, and no unnecessary clutter. Every chart was tested against real-world commit data to make sure it told a story at a glance. Building it reminded me how powerful simple, focused tools can be when they're made by someone who uses them every day.",
+      "stack": [
+        "typescript",
+        "nextjs",
+        "tailwind",
+        "figma",
+        "nodejs",
+        "vercel",
+        "docker",
+        "flyio"
+      ],
+      "images": [
+        {
+          "src": "/images/projects/happy-stats/01.webp",
+          "caption": "Dashboard overview",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 573,
+          "height": 80
+        },
+        {
+          "src": "/images/projects/happy-stats/02.webp",
+          "caption": "Activity charts",
+          "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+          "width": 600,
+          "height": 240
+        },
+        {
+          "src": "/images/projects/happy-stats/03.webp",
+          "caption": "Real-time metrics",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 210,
+          "height": 250
+        },
+        {
+          "src": "/images/projects/happy-stats/04.webp",
+          "caption": "Commit analytics",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 250,
+          "height": 234
+        },
+        {
+          "src": "/images/projects/happy-stats/05.webp",
+          "caption": "Team insights",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 488,
+          "height": 128
+        }
+      ],
+      "highlights": [
+        "Built a modular charting system using Recharts for clean, customizable visuals",
+        "Designed a real-time update flow powered by Supabase subscriptions",
+        "Implemented role-based dashboards for teams and solo developers",
+        "Optimized queries for large datasets using PostgreSQL window functions"
+      ],
+      "moreProjects": [
+        "justos",
+        "neobase"
+      ]
+    }
+  ]
+}
