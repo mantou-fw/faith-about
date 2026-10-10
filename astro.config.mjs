@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: process.env.SITE_URL ?? 'https://mantou-aboutme.workers.dev',
+  site: process.env.SITE_URL ?? 'https://aboutme.faithli0929.workers.dev',
   base: process.env.BASE_PATH ?? '/',
   output: 'static',
   session: false,
