@@ -1,4 +1,4 @@
 ---
-export const prerender = false;
-return Astro.redirect('/about/', 302);
+import { withBase } from '../lib/paths';
+return Astro.redirect(withBase('/about/'));
 ---

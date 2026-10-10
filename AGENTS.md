@@ -66,19 +66,19 @@ Project MCP configuration:
 ## Project stack
 
 - Astro 7
-- Bun runtime via `@astrojs/node` standalone output
+- Static Astro output deployed to GitHub Pages; Bun for tooling
 - Tailwind CSS 4
 - Bun (explicitly requested for this Echo implementation)
 - Bearnie as source-owned UI primitives
 - Impeccable for frontend design quality
 - Matt Pocock alignment/spec/review skills
 - `astro-seo`
-- runtime sitemap endpoint using `sitemap`
+- build-time sitemap endpoint using `sitemap`
 - TypeScript
 
 ## Package manager and runtime
 
-The user explicitly requested Bun for package management, tooling and production runtime.
+The user requested GitHub Pages deployment with Bun for package management and tooling. Pages serves static output; no server runtime runs there.
 
 ```bash
 bun install --frozen-lockfile
@@ -88,7 +88,7 @@ bun test
 bun run start
 ```
 
-Commit bun.lock; do not add npm, pnpm or Yarn lockfiles. Astro CLI scripts force Bun with `bun --bun`. The official Node standalone adapter's built entry is executed by Bun. Runtime health must report bun. GitHub Pages is not the server deployment target.
+Commit bun.lock; do not add npm, pnpm or Yarn lockfiles. Astro CLI scripts force Bun with `bun --bun`. The GitHub Actions workflow builds static output with Bun and deploys dist to Pages. Respect BASE_PATH for every local URL.
 
 ## UI architecture
 
@@ -112,16 +112,16 @@ src/styles/bearnie.css
 
 ## Rendering and Bun
 
-- Verify the production server on Bun.
+- Verify the static output and deployed Pages site.
 - Prefer prerendering for static pages.
-- Use on-demand rendering when runtime behavior is required.
+- All published routes/endpoints must prerender for Pages.
 - Do not expose secrets through `PUBLIC_*`.
 
 ## SEO
 
 Use `src/layouts/BaseLayout.astro`.
 
-Runtime sitemap:
+Build-time sitemap:
 
 ```text
 GET /sitemap.xml

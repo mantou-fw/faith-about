@@ -1,12 +1,13 @@
+import { withBase } from '../lib/paths';
 import type { APIRoute } from 'astro';
 
-export const prerender = false;
+export const prerender = true;
 
 export const GET: APIRoute = ({ request, site }) => {
   const baseUrl =
     site?.href.replace(/\/$/, '') ??
     new URL(request.url).origin;
-  const sitemap = new URL('/sitemap.xml', baseUrl).href;
+  const sitemap = new URL(withBase('/sitemap.xml'), baseUrl).href;
 
   const body = [
     'User-agent: *',

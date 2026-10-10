@@ -1,4 +1,5 @@
 ---
+import { withBase } from '@/lib/paths';
 import { SEO } from 'astro-seo';
 import { ClientRouter } from 'astro:transitions';
 import Header from '@/components/site/echo/Header.astro';
@@ -30,7 +31,7 @@ const site = Astro.site ?? new URL('https://example.com');
 const canonicalUrl = canonical
   ? new URL(canonical, site).href
   : new URL(Astro.url.pathname, site).href;
-const imageUrl = image ? new URL(image, site).href : undefined;
+const imageUrl = image ? new URL(withBase(image), site).href : undefined;
 const pageTitle = title;
 const structuredData =
   jsonLd ??
@@ -38,7 +39,7 @@ const structuredData =
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: siteName,
-    url: site.href,
+    url: new URL(import.meta.env.BASE_URL, site).href,
   };
 ---
 
@@ -71,7 +72,7 @@ const structuredData =
     <meta name="twitter:description" content={description} />
     {imageUrl && <meta name="twitter:image" content={imageUrl} />}
 
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href={withBase("/sitemap.xml")} />
 
     <script
       type="application/ld+json"
@@ -79,9 +80,9 @@ const structuredData =
       set:html={JSON.stringify(structuredData)}
     ></script>
 
-    <link rel="stylesheet" href="/echo.css" />
-    <link rel="icon" type="image/png" href="/images/portfolio/avatar.png" />
-    <link rel="apple-touch-icon" href="/images/portfolio/avatar.png" />
+    <link rel="stylesheet" href={withBase("/echo.css")} />
+    <link rel="icon" type="image/png" href={withBase("/images/portfolio/avatar.png")} />
+    <link rel="apple-touch-icon" href={withBase("/images/portfolio/avatar.png")} />
     <ClientRouter />
     <script is:inline data-astro-rerun>
       (() => {
