@@ -1,0 +1,122 @@
+[
+  {
+    "name": "home-desktop",
+    "sourcePixels": [
+      1425,
+      4628
+    ],
+    "astroPixels": [
+      1425,
+      4628
+    ],
+    "comparison": "qa/compare-home-desktop.jpg"
+  },
+  {
+    "name": "about-car-hover-desktop",
+    "sourcePixels": [
+      1425,
+      4297
+    ],
+    "astroPixels": [
+      1425,
+      4297
+    ],
+    "comparison": "qa/compare-about-car-hover-desktop.jpg"
+  },
+  {
+    "name": "projects-featured-desktop",
+    "sourcePixels": [
+      1425,
+      1861
+    ],
+    "astroPixels": [
+      1425,
+      1861
+    ],
+    "comparison": "qa/compare-projects-featured-desktop.jpg"
+  },
+  {
+    "name": "about-desktop",
+    "sourcePixels": [
+      1425,
+      4297
+    ],
+    "astroPixels": [
+      1425,
+      4297
+    ],
+    "comparison": "qa/compare-about-desktop.jpg"
+  },
+  {
+    "name": "home-mobile",
+    "sourcePixels": [
+      375,
+      6668
+    ],
+    "astroPixels": [
+      375,
+      6668
+    ],
+    "comparison": "qa/compare-home-mobile.jpg"
+  },
+  {
+    "name": "projects-echo-ui-desktop",
+    "sourcePixels": [
+      1425,
+      4826
+    ],
+    "astroPixels": [
+      1425,
+      4826
+    ],
+    "comparison": "qa/compare-projects-echo-ui-desktop.jpg"
+  },
+  {
+    "name": "articles-thinking-in-components-desktop",
+    "sourcePixels": [
+      1425,
+      5540
+    ],
+    "astroPixels": [
+      1425,
+      5540
+    ],
+    "comparison": "qa/compare-articles-thinking-in-components-desktop.jpg"
+  },
+  {
+    "name": "about-movie-hover-desktop",
+    "sourcePixels": [
+      1425,
+      4297
+    ],
+    "astroPixels": [
+      1425,
+      4297
+    ],
+    "comparison": "qa/compare-about-movie-hover-desktop.jpg"
+  },
+  {
+    "name": "projects-desktop",
+    "sourcePixels": [
+      1425,
+      4071
+    ],
+    "astroPixels": [
+      1425,
+      4071
+    ],
+    "comparison": "qa/compare-projects-desktop.jpg"
+  },
+  {
+    "name": "home-dark",
+    "sourcePixels": [
+      1425,
+      4628
+    ],
+    "astroPixels": [
+      1425,
+      4628
+    ],
+    "comparison": "qa/compare-home-dark.jpg"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "articles": [
+    {
+      "title": "Scaling a side project to 10k users",
+      "slug": "scaling-side-project",
+      "description": "What started as a weekend idea slowly turned into a product used by thousands. Here's what I learned about infrastructure, patience, and why \"just ship it\" only works when you're ready to handle what comes next.",
+      "date": "Tue Nov 04 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
+      "pinned": true
+    },
+    {
+      "title": "Why I still love writing vanilla JavaScript",
+      "slug": "vanilla-javascript",
+      "description": "Even with frameworks evolving every month, I keep coming back to plain JavaScript. There's something pure about writing logic that runs instantly in the browser — no setup, no build step, just you and the code.",
+      "date": "Sat Nov 01 2025 00:00:00 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+      "title": "The cost of over-engineering",
+      "slug": "cost-of-over-engineering",
+      "description": "Sometimes we build systems so flexible that no one can understand them later — including ourselves. This post is a reminder that clarity often scales better than cleverness.",
+      "date": "Mon Oct 20 2025 00:00:00 GMT+0000 (Coordinated Universal Time)"
+    }
+  ],
+  "showHeader": true,
+  "headerTitle": "Related articles",
+  "showReadAllLink": false
+}

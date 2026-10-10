@@ -1,0 +1,46 @@
+{
+  "images": [
+    {
+      "src": "/images/projects/charter/01.webp",
+      "caption": "Contract builder",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 573,
+      "height": 80
+    },
+    {
+      "src": "/images/projects/charter/02.webp",
+      "caption": "Document analysis",
+      "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+      "width": 600,
+      "height": 240
+    },
+    {
+      "src": "/images/projects/charter/03.webp",
+      "caption": "Template library",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 210,
+      "height": 250
+    },
+    {
+      "src": "/images/projects/charter/04.webp",
+      "caption": "Review workflow",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 250,
+      "height": 234
+    },
+    {
+      "src": "/images/projects/charter/05.webp",
+      "caption": "Legal templates",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 488,
+      "height": 128
+    }
+  ],
+  "additionalDescription": "Legal language has historically been a barrier that keeps everyday people from understanding their rights. Charter was built to break down that barrier. Every feature was designed with non-lawyers in mind, translating complex legal jargon into plain English while maintaining legal accuracy.",
+  "highlights": [
+    "Built an AI-powered contract analysis engine using NLP",
+    "Created a library of 100+ customizable legal templates",
+    "Implemented clause-by-clause explanations in plain English",
+    "Designed a collaborative review workflow for teams"
+  ]
+}

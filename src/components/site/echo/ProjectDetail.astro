@@ -1,0 +1,28 @@
+---
+import { Card } from '@/components/ui';
+interface Project {
+  slug: string; name: string; description: string; group: string; image: string;
+  sourceUrl: string | null; liveUrl: string | null; stack: string[]; highlights: string[];
+}
+interface Props { project: Project }
+const { project } = Astro.props;
+---
+<main class="flex-1">
+  <section class="hero-padding container space-y-10">
+    <a href="/projects" class="link-underline text-muted-foreground">← All projects</a>
+    <div class="space-y-5">
+      <p class="text-muted-foreground">{project.group}</p>
+      <h1 class="text-3xl md:text-4xl">{project.name}</h1>
+      <p class="text-muted-foreground text-lg leading-7">{project.description}</p>
+      <div class="flex flex-wrap gap-5">
+        {project.liveUrl && <a href={project.liveUrl} class="link-underline text-lg" target="_blank" rel="noopener noreferrer">View live ↗</a>}
+        {project.sourceUrl && <a href={project.sourceUrl} class="link-underline text-lg" target="_blank" rel="noopener noreferrer">Source code ↗</a>}
+      </div>
+    </div>
+    <img src={project.image} alt={project.name + ' project cover'} width="960" height="640" class="w-full rounded-xl" />
+  </section>
+  <section class="container section-padding space-y-10 pt-0!">
+    <div class="space-y-5"><h2 class="text-2xl">Inside the project</h2><ul class="portfolio-highlights text-muted-foreground text-lg leading-7">{project.highlights.map((text) => <li>{text}</li>)}</ul></div>
+    {project.stack.length > 0 && <div class="space-y-5"><h2 class="text-2xl">Built with</h2><ul class="portfolio-stack">{project.stack.map((name) => <li><Card class="portfolio-tech">{name}</Card></li>)}</ul></div>}
+  </section>
+</main>

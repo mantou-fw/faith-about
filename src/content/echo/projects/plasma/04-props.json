@@ -1,0 +1,46 @@
+{
+  "images": [
+    {
+      "src": "/images/projects/plasma/01.webp",
+      "caption": "Energy dashboard",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 573,
+      "height": 80
+    },
+    {
+      "src": "/images/projects/plasma/02.webp",
+      "caption": "Consumption analytics",
+      "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+      "width": 600,
+      "height": 240
+    },
+    {
+      "src": "/images/projects/plasma/03.webp",
+      "caption": "Savings insights",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 210,
+      "height": 250
+    },
+    {
+      "src": "/images/projects/plasma/04.webp",
+      "caption": "IoT integration",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 250,
+      "height": 234
+    },
+    {
+      "src": "/images/projects/plasma/05.webp",
+      "caption": "Real-time monitoring",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 488,
+      "height": 128
+    }
+  ],
+  "additionalDescription": "Energy waste is often invisible, making it easy to ignore. Plasma was designed to make energy consumption tangible and actionable. Real-time visualizations show exactly where energy goes, while AI-powered recommendations identify savings opportunities that would otherwise go unnoticed.",
+  "highlights": [
+    "Built real-time monitoring with IoT sensor integration",
+    "Implemented ML-based consumption prediction with 95% accuracy",
+    "Created automated demand response for peak load management",
+    "Designed ROI calculators for sustainability investments"
+  ]
+}

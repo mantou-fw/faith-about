@@ -1,0 +1,46 @@
+{
+  "images": [
+    {
+      "src": "/images/projects/bloom/01.webp",
+      "caption": "Product showcase",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 573,
+      "height": 80
+    },
+    {
+      "src": "/images/projects/bloom/02.webp",
+      "caption": "Ingredient analyzer",
+      "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+      "width": 600,
+      "height": 240
+    },
+    {
+      "src": "/images/projects/bloom/03.webp",
+      "caption": "Brand system",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 210,
+      "height": 250
+    },
+    {
+      "src": "/images/projects/bloom/04.webp",
+      "caption": "Visual identity",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 250,
+      "height": 234
+    },
+    {
+      "src": "/images/projects/bloom/05.webp",
+      "caption": "Shopping experience",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 488,
+      "height": 128
+    }
+  ],
+  "additionalDescription": "The beauty industry is full of greenwashing and misleading claims. Bloom was built to cut through the noise with transparent ingredient lists, verified sustainability credentials, and honest product reviews. Trust is the foundation of everything we built.",
+  "highlights": [
+    "Built an ingredient transparency system with safety ratings",
+    "Created a product comparison tool for informed purchasing",
+    "Implemented sustainability scoring based on verified criteria",
+    "Designed a community reviews system with verified purchases"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Happy Stats",
+  "liveUrl": "https://www.shadcnblocks.com/templates",
+  "sourceUrl": "https://www.shadcnblocks.com/templates",
+  "coverImage": "/images/projects/happy-stats/cover.webp",
+  "longDescription": "Happy Stats is a lightweight analytics dashboard built for developers who want clear insights without complex setup. It visualizes metrics like commits, deployments, and project activity in a fast, privacy-friendly way.",
+  "wrapperClassName": {
+    "$astroUndefined": true
+  },
+  "imageClassName": {
+    "$astroUndefined": true
+  }
+}

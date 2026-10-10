@@ -1,18 +1,15 @@
 import { defineConfig } from 'astro/config';
+import node from '@astrojs/node';
+import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
-// GitHub Pages serves this site from https://mantou-fw.github.io/faith-about/,
-// so `base` must carry the repository name or every asset URL resolves at /.
-const site = process.env.SITE_URL ?? 'https://mantou-fw.github.io';
-const base = process.env.SITE_BASE ?? '/faith-about';
-
 export default defineConfig({
-  site,
-  base,
-  // Everything on this site is prerendered at build time. No adapter needed.
-  output: 'static',
+  site: process.env.SITE_URL ?? 'http://localhost:4321',
+  output: 'server',
+  adapter: node({ mode: 'standalone' }),
+  session: false,
   trailingSlash: 'always',
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  devToolbar: { enabled: false },
+  integrations: [react()],
+  vite: { plugins: [tailwindcss()] },
 });

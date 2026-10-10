@@ -1,7 +1,11 @@
 ---
 import { SEO } from 'astro-seo';
-import { withBase } from '@/utils/base';
-import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import Header from '@/components/site/echo/Header.astro';
+import Footer from '@/components/site/echo/Footer.astro';
+import { TooltipProvider } from '@/components/ui/echo/index.js';
+import '../styles/echo-fonts.css';
+import '../styles/portfolio.css';
 
 interface Props {
   title: string;
@@ -16,23 +20,18 @@ const {
   title,
   description,
   canonical,
-  image,
+  image = "/images/portfolio/avatar.png",
   noindex = false,
   jsonLd,
 } = Astro.props;
 
-const siteName = import.meta.env.PUBLIC_SITE_NAME ?? 'Faith LI';
-const site = Astro.site ?? new URL('https://mantou-fw.github.io');
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-
-// Astro.url.pathname already carries `base` on a static build, so the canonical
-// is the pathname against the site origin — no manual prefixing needed.
+const siteName = import.meta.env.PUBLIC_SITE_NAME ?? 'Mantou / Faith';
+const site = Astro.site ?? new URL('https://example.com');
 const canonicalUrl = canonical
   ? new URL(canonical, site).href
   : new URL(Astro.url.pathname, site).href;
-const imageUrl = image ? new URL(base + image, site).href : undefined;
-const pageTitle = title.includes(siteName) ? title : title + ' | ' + siteName;
-const sitemapUrl = new URL(base + '/sitemap.xml', site).href;
+const imageUrl = image ? new URL(image, site).href : undefined;
+const pageTitle = title;
 const structuredData =
   jsonLd ??
   {
@@ -48,10 +47,6 @@ const structuredData =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href={withBase('/favicon/favicon.svg')} />
-    <link rel="icon" sizes="48x48" href={withBase('/favicon/favicon.ico')} />
-    <link rel="apple-touch-icon" href={withBase('/favicon/apple-touch-icon.png')} />
-    <link rel="sitemap" type="application/xml" href={sitemapUrl} />
 
     <SEO
       title={pageTitle}
@@ -76,15 +71,32 @@ const structuredData =
     <meta name="twitter:description" content={description} />
     {imageUrl && <meta name="twitter:image" content={imageUrl} />}
 
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
     <script
       type="application/ld+json"
       is:inline
       set:html={JSON.stringify(structuredData)}
     ></script>
 
+    <link rel="stylesheet" href="/echo.css" />
+    <link rel="icon" type="image/png" href="/images/portfolio/avatar.png" />
+    <link rel="apple-touch-icon" href="/images/portfolio/avatar.png" />
+    <ClientRouter />
+    <script is:inline data-astro-rerun>
+      (() => {
+        try {
+          document.documentElement.classList.toggle('dark', localStorage.getItem('theme') === 'dark');
+        } catch {}
+      })();
+    </script>
     <slot name="head" />
   </head>
-  <body class="min-h-screen antialiased">
-    <slot />
+  <body class="flex min-h-screen flex-col antialiased">
+    <TooltipProvider delayDuration={300} client:load>
+      <Header />
+      <slot />
+      <Footer />
+    </TooltipProvider>
   </body>
 </html>

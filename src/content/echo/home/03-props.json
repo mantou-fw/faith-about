@@ -1,0 +1,286 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "name": "Echo UI v3",
+      "slug": "echo-ui",
+      "description": "Component library & design system",
+      "href": "#",
+      "image": "/images/projects/echo-ui/cover.webp",
+      "imageClassName": "object-[center_20%]",
+      "category": "featured",
+      "liveUrl": "https://www.shadcnblocks.com/templates",
+      "sourceUrl": "https://www.shadcnblocks.com/templates",
+      "longDescription": "Echo UI is a comprehensive component library and design system built for modern web applications. It provides a cohesive set of accessible, customizable components that help teams ship beautiful interfaces faster while maintaining consistency across their products.",
+      "additionalDescription": "Building Echo UI taught me the importance of developer experience. Every component was designed with both the end user and the developer in mind — clear APIs, comprehensive documentation, and sensible defaults that can be easily overridden. The result is a system that teams actually want to use.",
+      "stack": [
+        "typescript",
+        "nextjs",
+        "tailwind",
+        "figma",
+        "nodejs",
+        "vercel",
+        "docker",
+        "flyio"
+      ],
+      "images": [
+        {
+          "src": "/images/projects/echo-ui/01.webp",
+          "caption": "Component showcase",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 573,
+          "height": 80
+        },
+        {
+          "src": "/images/projects/echo-ui/02.webp",
+          "caption": "Design tokens system",
+          "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+          "width": 600,
+          "height": 240
+        },
+        {
+          "src": "/images/projects/echo-ui/03.webp",
+          "caption": "Interactive documentation",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 210,
+          "height": 250
+        },
+        {
+          "src": "/images/projects/echo-ui/04.webp",
+          "caption": "Component API",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 250,
+          "height": 234
+        },
+        {
+          "src": "/images/projects/echo-ui/05.webp",
+          "caption": "Developer experience",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 488,
+          "height": 128
+        }
+      ],
+      "highlights": [
+        "Built 50+ accessible components following WAI-ARIA guidelines",
+        "Created a flexible theming system with CSS variables and Tailwind",
+        "Implemented comprehensive Storybook documentation with interactive examples",
+        "Achieved 98% test coverage with unit and integration tests"
+      ],
+      "moreProjects": [
+        "justos",
+        "scalar"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "JustOS",
+      "slug": "justos",
+      "description": "Productivity OS for Creators",
+      "href": "#",
+      "image": "/images/projects/justos/cover.svg",
+      "wrapperClassName": "size-24 [&_img]:dark:invert",
+      "category": "featured",
+      "liveUrl": "https://www.shadcnblocks.com/templates",
+      "sourceUrl": "https://www.shadcnblocks.com/templates",
+      "longDescription": "JustOS is a productivity operating system designed specifically for creators and makers. It combines task management, note-taking, and project planning into a unified workspace that adapts to how creative professionals actually work.",
+      "additionalDescription": "The biggest challenge with JustOS was balancing flexibility with simplicity. Creators need tools that can adapt to their unique workflows, but they also need to be able to start working immediately without a steep learning curve. We solved this with a modular architecture that reveals complexity gradually.",
+      "stack": [
+        "typescript",
+        "nextjs",
+        "tailwind",
+        "figma",
+        "nodejs",
+        "vercel",
+        "docker",
+        "flyio"
+      ],
+      "images": [
+        {
+          "src": "/images/projects/justos/01.webp",
+          "caption": "JustOS workspace",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 573,
+          "height": 80
+        },
+        {
+          "src": "/images/projects/justos/02.webp",
+          "caption": "Project dashboard",
+          "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+          "width": 600,
+          "height": 240
+        },
+        {
+          "src": "/images/projects/justos/03.webp",
+          "caption": "Clean interface design",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 210,
+          "height": 250
+        },
+        {
+          "src": "/images/projects/justos/04.webp",
+          "caption": "Task management",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 250,
+          "height": 234
+        },
+        {
+          "src": "/images/projects/justos/05.webp",
+          "caption": "Note-taking interface",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 488,
+          "height": 128
+        }
+      ],
+      "highlights": [
+        "Designed a modular workspace system with customizable layouts",
+        "Built real-time collaboration features using WebSockets",
+        "Implemented offline-first architecture with automatic sync",
+        "Created a plugin system for extending functionality"
+      ],
+      "moreProjects": [
+        "happy-stats",
+        "streamline"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Happy Stats",
+      "slug": "happy-stats",
+      "description": "Lightweight analytics dashboard",
+      "href": "#",
+      "image": "/images/projects/happy-stats/cover.webp",
+      "category": "featured",
+      "liveUrl": "https://www.shadcnblocks.com/templates",
+      "sourceUrl": "https://www.shadcnblocks.com/templates",
+      "longDescription": "Happy Stats is a lightweight analytics dashboard built for developers who want clear insights without complex setup. It visualizes metrics like commits, deployments, and project activity in a fast, privacy-friendly way.",
+      "additionalDescription": "Beyond the technical build, Happy Stats was also an exercise in product thinking. I wanted to design analytics that developers would actually enjoy using — clear typography, instant feedback, and no unnecessary clutter. Every chart was tested against real-world commit data to make sure it told a story at a glance. Building it reminded me how powerful simple, focused tools can be when they're made by someone who uses them every day.",
+      "stack": [
+        "typescript",
+        "nextjs",
+        "tailwind",
+        "figma",
+        "nodejs",
+        "vercel",
+        "docker",
+        "flyio"
+      ],
+      "images": [
+        {
+          "src": "/images/projects/happy-stats/01.webp",
+          "caption": "Dashboard overview",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 573,
+          "height": 80
+        },
+        {
+          "src": "/images/projects/happy-stats/02.webp",
+          "caption": "Activity charts",
+          "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+          "width": 600,
+          "height": 240
+        },
+        {
+          "src": "/images/projects/happy-stats/03.webp",
+          "caption": "Real-time metrics",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 210,
+          "height": 250
+        },
+        {
+          "src": "/images/projects/happy-stats/04.webp",
+          "caption": "Commit analytics",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 250,
+          "height": 234
+        },
+        {
+          "src": "/images/projects/happy-stats/05.webp",
+          "caption": "Team insights",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 488,
+          "height": 128
+        }
+      ],
+      "highlights": [
+        "Built a modular charting system using Recharts for clean, customizable visuals",
+        "Designed a real-time update flow powered by Supabase subscriptions",
+        "Implemented role-based dashboards for teams and solo developers",
+        "Optimized queries for large datasets using PostgreSQL window functions"
+      ],
+      "moreProjects": [
+        "justos",
+        "neobase"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Cactus Plant",
+      "slug": "cactus-plant",
+      "description": "Realtime collaboration framework",
+      "href": "#",
+      "image": "/images/projects/cactus-plant/cover.webp",
+      "category": "open-source",
+      "liveUrl": "https://www.shadcnblocks.com/templates",
+      "sourceUrl": "https://www.shadcnblocks.com/templates",
+      "longDescription": "Cactus Plant is a realtime collaboration framework for building multiplayer experiences. It abstracts away the complexity of conflict resolution, presence awareness, and state synchronization, letting developers focus on building features.",
+      "additionalDescription": "The hardest part of building Cactus Plant was handling edge cases — network partitions, out-of-order messages, and conflicting edits. We spent months perfecting our CRDT implementation to ensure that no matter what happens, data is never lost and conflicts are resolved deterministically.",
+      "stack": [
+        "typescript",
+        "nextjs",
+        "tailwind",
+        "figma",
+        "nodejs",
+        "vercel",
+        "docker",
+        "flyio"
+      ],
+      "images": [
+        {
+          "src": "/images/projects/cactus-plant/01.webp",
+          "caption": "Collaboration in action",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 573,
+          "height": 80
+        },
+        {
+          "src": "/images/projects/cactus-plant/02.webp",
+          "caption": "Architecture overview",
+          "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+          "width": 600,
+          "height": 240
+        },
+        {
+          "src": "/images/projects/cactus-plant/03.webp",
+          "caption": "Developer experience",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 210,
+          "height": 250
+        },
+        {
+          "src": "/images/projects/cactus-plant/04.webp",
+          "caption": "CRDT implementation",
+          "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+          "width": 250,
+          "height": 234
+        },
+        {
+          "src": "/images/projects/cactus-plant/05.webp",
+          "caption": "Real-time sync",
+          "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+          "width": 488,
+          "height": 128
+        }
+      ],
+      "highlights": [
+        "Implemented CRDT-based conflict resolution for seamless collaboration",
+        "Built a presence system showing real-time cursor positions and selections",
+        "Created an efficient binary protocol reducing bandwidth by 70%",
+        "Designed horizontal scaling architecture supporting 100k+ concurrent users"
+      ],
+      "moreProjects": [
+        "neobase",
+        "sonic"
+      ]
+    }
+  ]
+}

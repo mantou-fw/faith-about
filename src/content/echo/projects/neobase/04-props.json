@@ -1,0 +1,46 @@
+{
+  "images": [
+    {
+      "src": "/images/projects/neobase/01.webp",
+      "caption": "Query interface",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 573,
+      "height": 80
+    },
+    {
+      "src": "/images/projects/neobase/02.webp",
+      "caption": "Performance dashboard",
+      "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+      "width": 600,
+      "height": 240
+    },
+    {
+      "src": "/images/projects/neobase/03.webp",
+      "caption": "Schema explorer",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 210,
+      "height": 250
+    },
+    {
+      "src": "/images/projects/neobase/04.webp",
+      "caption": "Storage engine",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 250,
+      "height": 234
+    },
+    {
+      "src": "/images/projects/neobase/05.webp",
+      "caption": "Query analytics",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 488,
+      "height": 128
+    }
+  ],
+  "additionalDescription": "Building a database from scratch taught me more about computer science fundamentals than any course ever could. From implementing B-trees to designing a query optimizer, every component required deep understanding of data structures and algorithms. The result is a database that is both powerful and approachable.",
+  "highlights": [
+    "Designed a hybrid storage engine supporting both document and relational models",
+    "Implemented ACID transactions with optimistic concurrency control",
+    "Built a query language that combines SQL familiarity with JSON flexibility",
+    "Created automatic indexing based on query pattern analysis"
+  ]
+}

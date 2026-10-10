@@ -1,0 +1,13 @@
+{
+  "name": "Neobase",
+  "liveUrl": "https://www.shadcnblocks.com/templates",
+  "sourceUrl": "https://www.shadcnblocks.com/templates",
+  "coverImage": "/images/projects/neobase/cover.webp",
+  "longDescription": "Neobase is a next-generation database solution that combines the flexibility of NoSQL with the reliability of traditional relational databases. It is designed for modern applications that need to scale without compromising on data integrity.",
+  "wrapperClassName": {
+    "$astroUndefined": true
+  },
+  "imageClassName": {
+    "$astroUndefined": true
+  }
+}

@@ -17,3 +17,9 @@ This project includes adapted/copied workflow material from Matt Pocock's skills
 - License: MIT
 
 The project-specific `project-intent` skill is an adaptation that integrates those ideas with this starter's Astro, Bearnie, and Impeccable conventions.
+
+## Echo public frontend reconstruction
+
+Reference: https://echo-astro-template.vercel.app/ (Echo / Shadcnblocks).
+
+Recovered public JavaScript, compiled CSS, local fonts, images and portfolio text are preserved for the requested reconstruction. Their original provenance and rights are separate from this starter's MIT license; this reconstruction does not claim their authorship or recover unpublished source. The React adapter modules and native Astro composition were authored for this integration.

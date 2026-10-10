@@ -1,0 +1,46 @@
+{
+  "images": [
+    {
+      "src": "/images/projects/cactus-plant/01.webp",
+      "caption": "Collaboration in action",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 573,
+      "height": 80
+    },
+    {
+      "src": "/images/projects/cactus-plant/02.webp",
+      "caption": "Architecture overview",
+      "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+      "width": 600,
+      "height": 240
+    },
+    {
+      "src": "/images/projects/cactus-plant/03.webp",
+      "caption": "Developer experience",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 210,
+      "height": 250
+    },
+    {
+      "src": "/images/projects/cactus-plant/04.webp",
+      "caption": "CRDT implementation",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 250,
+      "height": 234
+    },
+    {
+      "src": "/images/projects/cactus-plant/05.webp",
+      "caption": "Real-time sync",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 488,
+      "height": 128
+    }
+  ],
+  "additionalDescription": "The hardest part of building Cactus Plant was handling edge cases — network partitions, out-of-order messages, and conflicting edits. We spent months perfecting our CRDT implementation to ensure that no matter what happens, data is never lost and conflicts are resolved deterministically.",
+  "highlights": [
+    "Implemented CRDT-based conflict resolution for seamless collaboration",
+    "Built a presence system showing real-time cursor positions and selections",
+    "Created an efficient binary protocol reducing bandwidth by 70%",
+    "Designed horizontal scaling architecture supporting 100k+ concurrent users"
+  ]
+}

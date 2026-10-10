@@ -5,8 +5,10 @@
       "url": "https://mcp.docs.astro.build/mcp"
     },
     "bearnie": {
-      "command": "npx",
-      "args": ["@bearnie/mcp"]
+      "command": "bunx",
+      "args": [
+        "@bearnie/mcp"
+      ]
     }
   }
 }

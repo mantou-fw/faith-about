@@ -1,0 +1,10 @@
+---
+import data from '@/data/portfolio.json';
+---
+<footer class="container section-padding portfolio-footer">
+  <div class="flex items-center justify-between gap-5 text-muted-foreground">
+    <span>{data.profile.name}</span>
+    <div class="flex flex-wrap gap-5"><a class="link-underline" href={`mailto:${data.profile.email}`}>Email ↗</a>
+    <a class="link-underline" href={data.profile.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+  </div>
+</footer>

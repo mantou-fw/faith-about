@@ -1,0 +1,6 @@
+.portfolio-stack { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.portfolio-tech { display:flex; align-items:center; justify-content:center; min-height:84px; padding:16px 10px; text-align:center; font-size:15px; }
+.portfolio-highlights { padding-left:1.2em; list-style:disc; }
+.portfolio-highlights li + li { margin-top:12px; }
+.portfolio-footer { border-top:1px solid var(--border); }
+@media(max-width:480px) { .portfolio-stack { grid-template-columns:repeat(2,minmax(0,1fr)); } }

@@ -1,0 +1,46 @@
+{
+  "images": [
+    {
+      "src": "/images/projects/streamline/01.webp",
+      "caption": "Workflow builder",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 573,
+      "height": 80
+    },
+    {
+      "src": "/images/projects/streamline/02.webp",
+      "caption": "Integration library",
+      "wrapperClassName": "[&>div]:max-md:pe-0! max-md:pb-0! [&_img]:translate-y-1 [&_img]:translate-x-1",
+      "width": 600,
+      "height": 240
+    },
+    {
+      "src": "/images/projects/streamline/03.webp",
+      "caption": "Automation templates",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 210,
+      "height": 250
+    },
+    {
+      "src": "/images/projects/streamline/04.webp",
+      "caption": "Execution dashboard",
+      "wrapperClassName": "max-md:pb-0! [&_img]:translate-y-4",
+      "width": 250,
+      "height": 234
+    },
+    {
+      "src": "/images/projects/streamline/05.webp",
+      "caption": "Workflow analytics",
+      "wrapperClassName": "[&>div]:max-md:pe-0! [&_img]:translate-x-4",
+      "width": 488,
+      "height": 128
+    }
+  ],
+  "additionalDescription": "Automation should feel empowering, not intimidating. We designed Streamline with non-technical users in mind, using visual metaphors and natural language descriptions that make complex workflows accessible. The goal was to give everyone superpowers.",
+  "highlights": [
+    "Built a visual workflow editor with drag-and-drop simplicity",
+    "Created 200+ pre-built integrations with popular business tools",
+    "Implemented conditional logic and branching for complex workflows",
+    "Designed a monitoring dashboard with detailed execution logs"
+  ]
+}

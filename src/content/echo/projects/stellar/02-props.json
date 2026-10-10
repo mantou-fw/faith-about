@@ -1,0 +1,13 @@
+{
+  "name": "Stellar",
+  "liveUrl": "https://www.shadcnblocks.com/templates",
+  "sourceUrl": "https://www.shadcnblocks.com/templates",
+  "coverImage": "/images/projects/stellar/cover.webp",
+  "longDescription": "Stellar is a comprehensive platform for space exploration and astronomy enthusiasts. It brings the cosmos closer with interactive visualizations, real-time satellite tracking, and educational content that makes astronomy accessible to everyone.",
+  "wrapperClassName": {
+    "$astroUndefined": true
+  },
+  "imageClassName": {
+    "$astroUndefined": true
+  }
+}

@@ -1,0 +1,41 @@
+ <div class="prose prose-lg prose-neutral dark:prose-invert prose-a:link-underline prose-a:no-underline prose-lead:text-muted-foreground prose-li:marker:text-foreground prose-h2:text-2xl prose-h2:font-display prose-h2:mt-12 prose-h2:mb-4 max-w-none space-y-6"> <div class="container"><p>What started as a weekend idea slowly turned into a product used by thousands. Here’s what I learned along the way.</p></div>
+<div class="container"><p>The first version was embarrassingly simple — a single page app with a JSON file as a database. I deployed it on a free tier and shared it with a few friends. That was supposed to be the end of it.</p></div>
+<div class="container"><p>But then it got picked up on Twitter. And suddenly, my “weekend project” had real users with real expectations.</p></div>
+<div class="container"><h2 id="the-first-100-users">The First 100 Users</h2></div>
+<div class="container"><p>The first hundred users were easy. They were patient, forgiving, and mostly just curious. They sent feedback, reported bugs, and stuck around even when things broke.</p></div>
+<div class="container"><p>At this stage, I made one critical decision: <strong>I listened more than I built.</strong></p></div>
+<div class="container"><p>Instead of adding features I thought were cool, I focused on what users actually needed. A simpler onboarding. Faster load times. Better error messages. Small things that made a big difference.</p></div>
+<div class="not-prose bigger-container"><div class="code-block bg-card relative overflow-hidden rounded-3xl border shadow-xs"><pre class="overflow-x-auto p-5 text-sm leading-relaxed" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;overflow-x:auto" tabindex="0" data-language="js"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// My first &quot;analytics&quot; — just logging to console</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">window.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">addEventListener</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">&#39;error&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">e</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=&gt;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  console.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">log</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">&#39;User hit an error:&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, e.message);</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  // Later replaced with proper error tracking</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">});</span></span></code></pre></div></div>
+<div class="container"><h2 id="the-1000-user-problem">The 1,000 User Problem</h2></div>
+<div class="container"><p>At around 1,000 users, everything started to break. The JSON file approach wasn’t cutting it anymore. Response times climbed. The free tier hit its limits.</p></div>
+<div class="container"><p>I had to make real infrastructure decisions:</p></div>
+<div class="container"><ul>
+<li><strong>Database:</strong> Moved from JSON to PostgreSQL</li>
+<li><strong>Hosting:</strong> Upgraded to a paid tier with auto-scaling</li>
+<li><strong>Caching:</strong> Added Redis for frequently accessed data</li>
+<li><strong>Monitoring:</strong> Set up alerts for downtime and slow queries</li>
+</ul></div>
+<div class="container"><p>The hardest part wasn’t the technical migration — it was doing it without disrupting existing users. I learned to deploy changes incrementally, always with a rollback plan.</p></div>
+<div class="container"><h2 id="what-10000-users-taught-me">What 10,000 Users Taught Me</h2></div>
+<div class="container"><p>Reaching 10k users changed my perspective entirely. At this scale, you stop thinking about features and start thinking about <strong>systems</strong>.</p></div>
+<div class="container"><ul>
+<li><strong>Reliability matters more than novelty.</strong> Users don’t care about your new feature if the app is down.</li>
+<li><strong>Performance is a feature.</strong> Every 100ms of latency costs you engagement.</li>
+<li><strong>Documentation saves time.</strong> When others join, they need to understand your decisions.</li>
+<li><strong>Automation is essential.</strong> Manual deployments don’t scale. CI/CD pipelines do.</li>
+</ul></div>
+<div class="container"><h2 id="the-unexpected-challenges">The Unexpected Challenges</h2></div>
+<div class="container"><p>Some things surprised me:</p></div>
+<div class="container"><ul>
+<li><strong>Support requests multiply fast.</strong> Even a 1% issue rate means 100 tickets at 10k users.</li>
+<li><strong>Edge cases become common cases.</strong> That bug you ignored? Someone will find it daily.</li>
+<li><strong>People will use your product in ways you never imagined.</strong> Build for flexibility.</li>
+</ul></div>
+<div class="container"><h2 id="looking-back">Looking Back</h2></div>
+<div class="container"><p>Scaling from 0 to 10k wasn’t about being clever — it was about being consistent. Showing up every day, fixing bugs, listening to feedback, and making incremental improvements.</p></div>
+<div class="container"><p>The weekend project is now a real product. And the biggest lesson? <strong>Start simple, but build foundations that can grow.</strong></p></div>
+<div class="container"><p>If you’re working on something small right now, don’t over-engineer it — but don’t ignore the future either. The best time to think about scale is before you need it.</p></div> </div> </article>

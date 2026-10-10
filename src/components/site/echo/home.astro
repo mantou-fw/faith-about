@@ -1,0 +1,16 @@
+---
+import ProfileIntro from './ProfileIntro.astro';
+import TechStack from './TechStack.astro';
+import SelectedWork from '../../echo/selected-work.js';
+import { projects } from '@/data/portfolio.json';
+---
+<main class="flex-1">
+  <ProfileIntro />
+  <SelectedWork projects={projects.slice(0, 4)} client:load />
+  <TechStack />
+  <section class="container section-padding space-y-5 pt-0!">
+    <h2 class="text-2xl">A little about me</h2>
+    <p class="text-muted-foreground text-lg leading-7">Web starters, developer tools, responsive emails and AWS study resources — a few of the things you'll find in my projects.</p>
+    <a href="/profile/" class="link-underline text-lg">More about me</a>
+  </section>
+</main>

@@ -1,0 +1,11 @@
+{
+  "name": "Bloom",
+  "liveUrl": "https://www.shadcnblocks.com/templates",
+  "sourceUrl": "https://www.shadcnblocks.com/templates",
+  "coverImage": "/images/projects/bloom/cover.webp",
+  "longDescription": "Bloom is a sustainable beauty brand platform that connects eco-conscious consumers with clean beauty products. It combines e-commerce with education, helping customers make informed choices about what they put on their skin.",
+  "wrapperClassName": {
+    "$astroUndefined": true
+  },
+  "imageClassName": "object-[center_40%]"
+}
