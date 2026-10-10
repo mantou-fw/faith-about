@@ -28,6 +28,10 @@ jobs:
         env:
           SITE_URL: ${{ steps.pages.outputs.origin }}
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
+      - name: Optimize images to WebP
+        run: |
+          python -m pip install Pillow
+          python scripts/optimize-images.py
       - run: bun test
         env:
           SITE_URL: ${{ steps.pages.outputs.origin }}
