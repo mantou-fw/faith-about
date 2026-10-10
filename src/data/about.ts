@@ -8,6 +8,7 @@
 export interface Favorite {
   label: string;
   image: string;
+  imdbUrl?: string;
 }
 
 export interface StackItem {
@@ -48,17 +49,19 @@ export const story: string[] = [
 ];
 
 export const favoriteMovies: Favorite[] = [
-  { label: 'F1', image: '/images/about/movies/f1.webp' },
-  { label: 'Home Alone', image: '/images/about/movies/home-alone.webp' },
+  { label: 'F1', image: '/images/about/movies/f1.webp' , imdbUrl: 'https://www.imdb.com/title/tt16311594/' },
+  { label: 'Home Alone', image: '/images/about/movies/home-alone.webp' , imdbUrl: 'https://www.imdb.com/title/tt0099785/' },
   {
     label: 'Mission Impossible Franchise',
     image: '/images/about/movies/mission-impossible.webp',
+    imdbUrl: 'https://www.imdb.com/title/tt0117060/',
   },
-  { label: 'Rain Man', image: '/images/about/movies/rain-man.webp' },
-  { label: 'Top Gun Maverick', image: '/images/about/movies/top-gun-maverick.webp' },
+  { label: 'Rain Man', image: '/images/about/movies/rain-man.webp' , imdbUrl: 'https://www.imdb.com/title/tt0095953/' },
+  { label: 'Top Gun Maverick', image: '/images/about/movies/top-gun-maverick.webp' , imdbUrl: 'https://www.imdb.com/title/tt1745960/' },
   {
     label: 'The Shawshank Redemption',
     image: '/images/about/movies/shawshank-redemption.webp',
+    imdbUrl: 'https://www.imdb.com/title/tt0111161/',
   },
 ];
 
