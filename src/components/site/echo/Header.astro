@@ -1,10 +1,4 @@
 ---
-import { restoreProps } from "@/utils/echo-props";
-import Banner from '../../echo/banner.js';
-import props1 from '../../../content/echo/header/01-props.json';
 import Navbar from '../../echo/navbar.js';
-import props2 from '../../../content/echo/header/02-props.json';
 ---
-
-<Banner {...restoreProps(props1)} client:load />
-<Navbar {...restoreProps(props2)} client:load />
+<Navbar client:load />

@@ -6,6 +6,7 @@ import Header from '@/components/site/echo/Header.astro';
 import Footer from '@/components/site/echo/Footer.astro';
 import { TooltipProvider } from '@/components/ui/echo/index.js';
 import '../styles/echo-fonts.css';
+import '../styles/portfolio.css';
 
 interface Props {
   title: string;
@@ -20,12 +21,12 @@ const {
   title,
   description,
   canonical,
-  image = "/og-image.jpg",
+  image = "/images/portfolio/avatar.png",
   noindex = false,
   jsonLd,
 } = Astro.props;
 
-const siteName = import.meta.env.PUBLIC_SITE_NAME ?? 'Echo';
+const siteName = import.meta.env.PUBLIC_SITE_NAME ?? 'Mantou / Faith';
 const site = Astro.site ?? new URL('https://example.com');
 const canonicalUrl = canonical
   ? new URL(canonical, site).href
@@ -80,8 +81,8 @@ const structuredData =
     ></script>
 
     <link rel="stylesheet" href="/echo.css" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/images/portfolio/avatar.png" />
+    <link rel="apple-touch-icon" href="/images/portfolio/avatar.png" />
     <ClientRouter />
     <script is:inline data-astro-rerun>
       (() => {

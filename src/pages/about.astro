@@ -1,8 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import EchoContent from '@/components/site/echo/about.astro';
+import Content from '@/components/site/echo/about.astro';
+import { profile } from '@/data/portfolio.json';
 export const prerender = true;
 ---
-<BaseLayout title="About" description="John's portfolio — full-stack developer building things from idea to launch.">
-  <EchoContent />
-</BaseLayout>
+<BaseLayout title="About · Mantou / Faith" description={profile.intro} image={profile.avatar}><Content /></BaseLayout>

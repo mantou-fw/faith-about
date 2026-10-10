@@ -1,11 +1,13 @@
 ---
-import { restoreProps } from "@/utils/echo-props";
-import markup1 from '../../../content/echo/projects/01-markup.html?raw';
 import ProjectsTabs from '../../echo/projects-tabs.js';
-import props2 from '../../../content/echo/projects/02-props.json';
-import markup3 from '../../../content/echo/projects/03-markup.html?raw';
+import { projects } from '@/data/portfolio.json';
 ---
-
-<Fragment set:html={markup1} />
-<ProjectsTabs {...restoreProps(props2)} client:load />
-<Fragment set:html={markup3} />
+<main class="flex-1">
+  <section class="hero-padding">
+    <div class="container flex flex-col gap-5">
+      <h1 class="text-3xl md:text-4xl">Projects & experiments</h1>
+      <p class="text-muted-foreground text-lg leading-7">Seven public projects — starters, developer tools and AWS study resources.</p>
+    </div>
+    <ProjectsTabs projects={projects} client:load />
+  </section>
+</main>

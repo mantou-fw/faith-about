@@ -1,7 +1,8 @@
 import { describe, expect, test } from 'bun:test';
 import { readFile, access } from 'node:fs/promises';
 import { join } from 'node:path';
-import routes from '../src/content/echo/routes.json' with { type: 'json' };
+import { portfolioRoutes as routes } from '../src/data/routes.ts';
+import { projects } from '../src/data/portfolio.json' with { type: 'json' };
 import { GET as sitemap } from '../src/pages/sitemap.xml.ts';
 
 const root = new URL('../', import.meta.url).pathname;
@@ -14,7 +15,11 @@ describe('Astro portfolio build', () => {
       expect(html).toContain(`<title>${route.title}</title>`);
       expect(html.match(/<main\b/g)?.length).toBe(1);
       expect(html.match(/<body\b/g)?.length).toBe(1);
-      expect(html).toContain('renderer-url="/_astro/');
+      if (route.path === '/' || route.path === '/projects') expect(html).toContain('renderer-url="/_astro/');
+      expect(html).not.toContain("John's");
+      expect(html).not.toContain('hi@john.me');
+      expect(html).not.toContain('11.2k');
+      expect(html).not.toContain('href="undefined"');
       expect(html).not.toContain('echo-astro-template.vercel.app');
       expect(html).not.toContain('client.Bbawvn5d.js');
       expect(html).not.toContain('{{');
@@ -32,7 +37,22 @@ describe('Astro portfolio build', () => {
     expect(response.status).toBe(200);
     expect(response.headers.get('content-type')).toContain('application/xml');
     const xml = await response.text();
-    expect(xml.match(/<loc>/g)?.length).toBe(22);
+    expect(xml.match(/<loc>/g)?.length).toBe(routes.length);
     for (const { path } of routes) expect(xml).toContain(`<loc>https://portfolio.example${path}</loc>`);
   });
+});
+
+
+test('all seven selected repositories have honest project links and no fictional detail routes', async () => {
+  expect(projects).toHaveLength(7);
+  const catalog = await readFile(join(root, 'dist/client/projects/index.html'), 'utf8');
+  for (const project of projects) {
+    expect(catalog).toContain(`/projects/${project.slug}`);
+    const html = await readFile(join(root, 'dist/client/projects', project.slug, 'index.html'), 'utf8');
+    expect(html).toContain(`href="https://github.com/faithli-dev/${project.slug}"`);
+    if (project.liveUrl) expect(html).toContain(`href="${project.liveUrl}"`);
+    else expect(html).not.toContain('View live');
+  }
+  expect(routes.some(({ path }) => path.startsWith('/articles'))).toBe(false);
+  await expect(access(join(root, 'dist/client/projects/echo-ui/index.html'))).rejects.toThrow();
 });

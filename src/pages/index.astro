@@ -1,8 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import EchoContent from '@/components/site/echo/home.astro';
+import Content from '@/components/site/echo/home.astro';
+import { profile } from '@/data/portfolio.json';
 export const prerender = true;
 ---
-<BaseLayout title="Echo - Modern Astro Template" description="John's portfolio — full-stack developer building things from idea to launch.">
-  <EchoContent />
-</BaseLayout>
+<BaseLayout title="Mantou / Faith" description={profile.intro} image={profile.avatar}><Content /></BaseLayout>

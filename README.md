@@ -1,6 +1,6 @@
-# Echo — Astro starter + Bun
+# Mantou / Faith — Astro + Bun portfolio
 
-以 [faithli-dev/astro-starter](https://github.com/faithli-dev/astro-starter) 為基礎，將上一版 Echo 還原整合為真正的 Astro 7 專案。保留 Cloudflare Workers adapter、SEO、runtime sitemap、Partytown 與 Bearnie UI 層。
+以 [faithli-dev/astro-starter](https://github.com/faithli-dev/astro-starter) 為基礎，保留 Echo 版面、Cloudflare Workers adapter、SEO、runtime sitemap、Partytown 與 Bearnie UI 層。
 
 ## 啟動
 
@@ -11,7 +11,7 @@ bun install --frozen-lockfile
 bun run dev --host 127.0.0.1 --port 4322 --ignore-lock
 ```
 
-本機預覽：<http://127.0.0.1:4322/>。`--ignore-lock` 在 agent 環境保持前景運行；一般終端亦可直接 `bun run dev`。
+本機預覽：[Mantou / Faith](http://127.0.0.1:4322/)。一般終端亦可直接 `bun run dev`。
 
 ```bash
 bun run check
@@ -19,31 +19,40 @@ bun run build
 bun test
 ```
 
-測試會檢查建置輸出，因此請先 build。Astro check 目前不支援 starter 指定的 TypeScript 7，已改為支援的 TypeScript 6.0.3。
+測試檢查建置輸出，請先 build。Astro check 目前不支援 starter 指定的 TypeScript 7，使用 TypeScript 6.0.3。
+
+## 修改個人資料
+
+`src/data/portfolio.json` 集中管理名稱、頭像、GitHub、自我介紹、tech stack 及 7 個 projects。新增 project 後，詳情頁和 sitemap 自動按資料生成，毋須另加路由檔。
+
+- 名稱 **Mantou / Faith**、全部 7 個公開 repositories、頭像來自使用者確認。
+- 簡介及技術按公開 README、package manifest 與網站內容整理；Bun 是使用者指定的本專案工作流程。
+- 未提供公開 email、職稱或工作經歷，目前只使用 GitHub 作聯絡入口。
+- Project 封面是名稱識別圖，不是產品截圖。
 
 ## 內容與架構
 
-- `src/pages/`：22 個原生 `.astro` 頁面，全部 prerender。
-- `src/layouts/BaseLayout.astro`：沿用 starter 的 SEO，加入共用 Header/Footer、React islands 及 Astro ClientRouter。
-- `src/components/site/echo/`：頁面組合與共用站點元件。
-- `src/components/echo/`：從公開前端復原的 React 行為模組，改由新 Astro build 執行 SSR 與 hydration。
-- `src/components/ui/echo/`：既有 Echo React/Radix primitives 的公開介面；原有 Bearnie Astro primitives 保留在原 UI 層。
-- `src/content/echo/`：可讀 JSON props 與文章／靜態內容 HTML。修改資料會同時更新 SSR 及互動內容。
-- `public/images/`、`public/_astro/fonts/`：本地素材；`public/echo.css`：參考網站已編譯樣式。
-- `src/pages/sitemap.xml.ts`：沿用 starter 的 runtime sitemap，包含全部 22 個 URL。
+- `src/pages/`：首頁、Projects、About，另以 `[slug].astro` 生成 7 個 project 詳情，共 10 個靜態頁面。
+- `src/data/routes.ts`：從 portfolio 資料產生 route metadata，供 sitemap 與測試共用。
+- `src/layouts/BaseLayout.astro`：SEO、共用 Header/Footer、React islands 及 Astro ClientRouter。
+- `src/components/site/echo/`：個人化內容與頁面組合。
+- `src/components/echo/`：Echo 復原 React 行為；分類和導航已個人化。
+- `src/components/ui/echo/`：Echo React/Radix controls 公開介面；native Astro tech cards 使用 `@/components/ui` 的 Bearnie Card。
+- `src/content/echo/` 及未使用的舊 React/頁面組合：保留原版重建來源記錄，沒有發佈 template 的虛構項目／文章路由。
+- `public/images/portfolio/`：使用者原圖和 repository 封面。
 
-頁面包含首頁、Projects、About、Articles、14 個項目詳情及 4 篇文章。深色模式、分類篩選、橫幅關閉、文章連結／程式碼複製、電影／車輛圖片預覽與頁面切換均已驗證。
-
-## 設定與部署
+## 設定
 
 複製 `.env.example` 為 `.env`，將 `SITE_URL` 改為正式網域。`PUBLIC_GOOGLE_TAG_ID` 留空時不載入分析追蹤。
 
-Cloudflare adapter 和 `bun run deploy` 沿用 starter。正式部署需要你的 Cloudflare 設定；這次交付未部署或推送遠端。Bun 是本專案的套件管理流程，Cloudflare Workers 是正式服務 runtime。
+Cloudflare adapter 和 deploy 指令沿用 starter；本次未部署或推送遠端。Bun 是套件管理流程，Cloudflare Workers 是正式服務 runtime。
 
 ## 驗證與來源
 
-`design-qa.md`、`qa/` 提供桌面／手機檢查和原版左右比對。測試驗證 22 個 Astro 建置頁面、資源參照與 runtime sitemap。
+個人化檢查見 `docs/personalization-review.md`。`design-qa.md` 與 `qa/` 記錄之前 Echo 重建的原版比對，並非個人化後的逐像素比對；`preview.jpg` 是目前個人化首頁。
 
-參考來源：<https://echo-astro-template.vercel.app/>。這是公開前端重建，包含復原的 JavaScript、CSS、圖片、字型與內容；並非取得原作者未公開的 `.astro`／TSX 原始碼。新的路由、layout 和 Astro integration 是這次整合建立。原始 JS runtime、React bundle 與 hydration renderer 已由安裝的 React 和 `@astrojs/react` 取代。
+[faithli-dev 公開 GitHub](https://github.com/faithli-dev) 的 repo descriptions、README、package manifests 與兩個 AWS GitHub Pages 網站是內容依據。公開資料核對日期：2026-10-10。
 
-Starter 的 MIT 授權保留。Echo 素材／復原程式碼的來源與授權獨立於 starter，詳見 `THIRD_PARTY_NOTICES.md`。
+[Echo 參考網站](https://echo-astro-template.vercel.app/) 是版面與復原前端素材來源；未取得原作者未公開的 `.astro`／TSX。React、renderer 與路由由目前 Astro 專案提供。
+
+Starter 的 MIT 授權保留。Echo 素材／復原程式碼來源與授權獨立於 starter，詳見 `THIRD_PARTY_NOTICES.md`。

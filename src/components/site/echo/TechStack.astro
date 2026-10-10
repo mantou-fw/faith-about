@@ -1,0 +1,10 @@
+---
+import { Card } from '@/components/ui';
+import { profile } from '@/data/portfolio.json';
+---
+<section class="container section-padding space-y-10 pt-0!">
+  <h2 class="text-2xl">Tech stack</h2>
+  <ul class="portfolio-stack">
+    {profile.stack.map((name) => <li><Card class="portfolio-tech">{name}</Card></li>)}
+  </ul>
+</section>

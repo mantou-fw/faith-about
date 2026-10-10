@@ -1,0 +1,164 @@
+{
+  "profile": {
+    "name": "Mantou / Faith",
+    "github": "https://github.com/faithli-dev",
+    "handle": "faithli-dev",
+    "avatar": "/images/portfolio/avatar.png",
+    "intro": "Building with Astro, SvelteKit and Cloudflare.",
+    "about": "My public projects span web starters, website tooling, responsive email components and AWS study resources.",
+    "stack": [
+      "Astro",
+      "Svelte / SvelteKit",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "Cloudflare",
+      "Node.js",
+      "Bun",
+      "Drizzle ORM",
+      "Zod",
+      "Python",
+      "MJML"
+    ]
+  },
+  "projects": [
+    {
+      "slug": "aws-c03-note",
+      "name": "AWS C03 Notes",
+      "description": "AWS service notes, organized as a page-by-page reference.",
+      "category": "learning",
+      "group": "Learning",
+      "stack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "highlights": [
+        "Browse AWS study notes with one page per service.",
+        "Published as a static site on GitHub Pages."
+      ],
+      "sourceUrl": "https://github.com/faithli-dev/aws-c03-note",
+      "liveUrl": "https://faithli-dev.github.io/aws-c03-note/",
+      "image": "/images/portfolio/aws-c03-note.svg"
+    },
+    {
+      "slug": "aws-c03-test",
+      "name": "AWS C03 Mock Test",
+      "description": "A browser-based mock test for AWS C03 practice.",
+      "category": "learning",
+      "group": "Learning",
+      "stack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "highlights": [
+        "Practice AWS C03 questions in the browser.",
+        "Published on GitHub Pages."
+      ],
+      "sourceUrl": "https://github.com/faithli-dev/aws-c03-test",
+      "liveUrl": "https://faithli-dev.github.io/aws-c03-test/",
+      "image": "/images/portfolio/aws-c03-test.svg"
+    },
+    {
+      "slug": "astro-starter",
+      "name": "Astro Starter",
+      "description": "An Astro starter for Cloudflare, with Tailwind CSS and source-owned UI.",
+      "category": "starters",
+      "group": "Starters",
+      "stack": [
+        "Astro",
+        "TypeScript",
+        "Tailwind CSS",
+        "Cloudflare"
+      ],
+      "highlights": [
+        "Astro with Cloudflare Workers deployment.",
+        "Bearnie UI primitives, SEO and a runtime sitemap."
+      ],
+      "sourceUrl": "https://github.com/faithli-dev/astro-starter",
+      "liveUrl": null,
+      "image": "/images/portfolio/astro-starter.svg"
+    },
+    {
+      "slug": "svelte-starter",
+      "name": "Svelte Starter",
+      "description": "A SvelteKit starter built around Cloudflare and a typed data layer.",
+      "category": "starters",
+      "group": "Starters",
+      "stack": [
+        "Svelte",
+        "SvelteKit",
+        "TypeScript",
+        "Tailwind CSS",
+        "Cloudflare",
+        "Drizzle",
+        "Zod"
+      ],
+      "highlights": [
+        "SvelteKit with Svelte 5 and Cloudflare Workers.",
+        "D1, KV and R2 storage support with Drizzle ORM.",
+        "Tailwind CSS and shadcn-svelte UI."
+      ],
+      "sourceUrl": "https://github.com/faithli-dev/svelte-starter",
+      "liveUrl": null,
+      "image": "/images/portfolio/svelte-starter.svg"
+    },
+    {
+      "slug": "pages-scraper",
+      "name": "Pages Scraper",
+      "description": "A dependency-free toolkit for mirroring and retargeting websites.",
+      "category": "tools",
+      "group": "Tools",
+      "stack": [
+        "JavaScript",
+        "Node.js",
+        "Python"
+      ],
+      "highlights": [
+        "Crawl same-origin pages and download local assets.",
+        "Validate mirrors and retarget content with recipes.",
+        "Python helpers for inspecting HTML outlines."
+      ],
+      "sourceUrl": "https://github.com/faithli-dev/pages-scraper",
+      "liveUrl": null,
+      "image": "/images/portfolio/pages-scraper.svg"
+    },
+    {
+      "slug": "avone",
+      "name": "AVONE",
+      "description": "A collection of AV-related formulas.",
+      "category": "tools",
+      "group": "Tools",
+      "stack": [
+        "HTML"
+      ],
+      "highlights": [
+        "A public repository collecting AV-related formulas."
+      ],
+      "sourceUrl": "https://github.com/faithli-dev/avone",
+      "liveUrl": null,
+      "image": "/images/portfolio/avone.svg"
+    },
+    {
+      "slug": "svelte-mjml-plugin",
+      "name": "Svelte MJML Plugin",
+      "description": "Write responsive MJML emails inside Svelte components.",
+      "category": "tools",
+      "group": "Tools",
+      "stack": [
+        "JavaScript",
+        "Svelte",
+        "MJML"
+      ],
+      "highlights": [
+        "Compile MJML into responsive email HTML.",
+        "Preserve Svelte conditionals and each blocks.",
+        "Configurable preprocessing with Vite compatibility."
+      ],
+      "sourceUrl": "https://github.com/faithli-dev/svelte-mjml-plugin",
+      "liveUrl": null,
+      "image": "/images/portfolio/svelte-mjml-plugin.svg"
+    }
+  ]
+}
