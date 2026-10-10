@@ -29,8 +29,11 @@ const { title, items, class: className, previewOffset = 20 } = Astro.props;
       items.map((item) => (
         <li>
           <Tooltip>
-            <TooltipTrigger class="link-underline cursor-pointer transition-opacity duration-300">
-              {item.label}
+            <TooltipTrigger asChild>
+              <a href={item.imdbUrl ?? undefined} target={item.imdbUrl ? "_blank" : undefined} rel={item.imdbUrl ? "noopener noreferrer" : undefined} class="link-underline inline-flex cursor-pointer items-center gap-2 transition-opacity duration-300">
+                <img src={withAsset(item.image)} alt="" width="44" height="60" loading="lazy" class="h-15 w-11 rounded-lg object-cover" />
+                <span>{item.label}{item.imdbUrl ? " ↗" : ""}</span>
+              </a>
             </TooltipTrigger>
             <TooltipContent
               side="right"
