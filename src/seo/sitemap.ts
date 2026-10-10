@@ -5,8 +5,8 @@ import { withBase } from '../lib/paths';
 
 export async function getSitemapEntries(_context: APIContext): Promise<SitemapItemLoose[]> {
   return portfolioRoutes.map(({ path }) => ({
-    url: withBase(`${path}/`),
+    url: withBase(path === "/" ? path : `${path}/`),
     changefreq: EnumChangefreq.WEEKLY,
-    priority: path === '/about' ? 1 : 0.7,
+    priority: path === '/' ? 1 : 0.7,
   }));
 }

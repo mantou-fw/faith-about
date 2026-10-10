@@ -40,6 +40,7 @@
     "@astrojs/check": "^0.9.10",
     "bearnie": "^0.3.2",
     "impeccable": "^4.1.0",
+    "simple-icons": "^16.34.0",
     "typescript": "^6.0"
   },
   "packageManager": "bun@1.3.14"

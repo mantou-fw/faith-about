@@ -23,3 +23,7 @@ The project-specific `project-intent` skill is an adaptation that integrates tho
 Reference: https://echo-astro-template.vercel.app/ (Echo / Shadcnblocks).
 
 Recovered public JavaScript, compiled CSS, local fonts, images and portfolio text are preserved for the requested reconstruction. Their original provenance and rights are separate from this starter's MIT license; this reconstruction does not claim their authorship or recover unpublished source. The React adapter modules and native Astro composition were authored for this integration.
+
+## Simple Icons
+
+Technology brand paths from https://github.com/simple-icons/simple-icons, distributed under CC0-1.0. Brands retain their respective trademark rights. MJML uses an authored email/code symbol, not a claimed official logo.

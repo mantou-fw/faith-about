@@ -22,11 +22,11 @@ Repository Settings → Pages → Build and deployment → Source must be **GitH
 
 The default site is `https://mantou-fw.github.io` with base `/aboutme`. The deployment workflow takes the origin and base from `configure-pages`, so local URLs and SEO follow the Pages configuration. Set SITE_URL and BASE_PATH before building if using a custom domain; `.env.example` documents the defaults. Tests use the same variables.
 
-GitHub Pages serves static files. Bun runs development, builds and tests; there is no Bun server or runtime health endpoint on Pages. Sitemap and robots are generated during build. The root has a generated HTML redirect to `/aboutme/about/`.
+GitHub Pages serves static files. Bun runs development, builds and tests; there is no Bun server or runtime health endpoint on Pages. Sitemap and robots are generated during build. The root renders the homepage directly, with no redirect.
 
 ## Content
 
-`src/data/portfolio.json` contains the supplied avatar, Mantou / Faith identity, technology stack, seven selected public GitHub projects and HTIFA. Founder, HTIFA / Taiwan and the public email are preserved. `/about/`, `/profile/`, `/projects/` and each project detail are available under the deployment base. Project filtering and theme controls remain interactive.
+`src/data/portfolio.json` contains the supplied avatar, Mantou / Faith identity, technology stack, seven selected public GitHub projects and HTIFA. Founder, HTIFA / Taiwan and the public email are preserved. `/`, `/profile/`, `/projects/` and each project detail are available under the deployment base. Project filtering and theme controls remain interactive. The homepage also includes all 13 technology icons, the original six favorite movies with image previews, and a Blog section awaiting real posts.
 
 Use `src/lib/paths.js` for local navigation and public assets. `src/data/routes.ts` provides the catalog for sitemap and tests. The original Astro and Echo fixtures remain as historical source and do not publish demo routes.
 

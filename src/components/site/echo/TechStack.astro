@@ -1,10 +1,24 @@
 ---
-import { Card } from '@/components/ui';
+import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui';
 import { profile } from '@/data/portfolio.json';
+import { stackIcons } from '@/data/stack-icons';
 ---
-<section class="container section-padding space-y-10 pt-0!">
-  <h2 class="text-2xl">Tech stack</h2>
+<section class="container section-padding space-y-10 pt-0!" aria-labelledby="tech-stack-title">
+  <h2 id="tech-stack-title" class="text-2xl">Tech stack</h2>
   <ul class="portfolio-stack">
-    {profile.stack.map((name) => <li><Card class="portfolio-tech">{name}</Card></li>)}
+    {profile.stack.map((name) => {
+      const icon = stackIcons[name];
+      return (
+        <li data-tech={name}>
+          <Tooltip>
+            <TooltipTrigger class="portfolio-tech group bg-muted text-muted-foreground" aria-label={name} style={`--brand-color: #${icon.hex};`}>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-9 transition-colors group-hover:text-[var(--brand-color)] group-focus-visible:text-[var(--brand-color)]"><path d={icon.path} /></svg>
+              <span class="sr-only">{name}</span>
+            </TooltipTrigger>
+            <TooltipContent>{name}</TooltipContent>
+          </Tooltip>
+        </li>
+      );
+    })}
   </ul>
 </section>

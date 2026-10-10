@@ -1,7 +1,0 @@
----
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import Content from '@/components/site/echo/home.astro';
-import { profile } from '@/data/portfolio.json';
-export const prerender = true;
----
-<BaseLayout title="Mantou / Faith" description={profile.intro} image={profile.avatar}><Content /></BaseLayout>

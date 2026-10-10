@@ -19,9 +19,9 @@ describe('static Pages portfolio', () => {
       expect(html).toContain(`<title>${route.title}</title>`);
       expect(html.match(/<main\b/g)?.length).toBe(1);
       expect(html.match(/<body\b/g)?.length).toBe(1);
-      expect(html).toContain(`href="${site}${base}${route.path}/"`);
+      expect(html).toContain(`href="${site}${base}${route.path === "/" ? "/" : `${route.path}/`}"`);
       expect(html).toContain(`content="${site}${base}/images/portfolio/`);
-      if (['/about', '/projects'].includes(route.path)) expect(html).toContain(`renderer-url="${base}/_astro/`);
+      if (['/', '/projects'].includes(route.path)) expect(html).toContain(`renderer-url="${base}/_astro/`);
       for (const unwanted of ["John's", 'hi@john.me', '11.2k', 'href="undefined"', 'echo-astro-template.vercel.app', '{{']) {
         expect(html).not.toContain(unwanted);
       }
