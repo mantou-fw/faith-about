@@ -4,8 +4,8 @@
     "github": "https://github.com/faithli-dev",
     "handle": "faithli-dev",
     "avatar": "/images/portfolio/avatar.png",
-    "intro": "Building with Astro, SvelteKit and Cloudflare.",
-    "about": "My public projects span web starters, website tooling, responsive email components and AWS study resources.",
+    "intro": "Engineer by background, builder by curiosity, founder by choice. Exploring cloud, AI infrastructure, and products that solve real-world problems.",
+    "about": "I started in audiovisual and collaboration engineering, working across system design, integration, troubleshooting, and customer-facing technical roles. Today, I work at the intersection of engineering, cloud infrastructure, and entrepreneurship. I founded HTIFA to help international teams get operational work done on the ground in Taiwan. Outside work, I build and experiment with software, from developer tools and AWS learning resources to small internet products. I enjoy connecting physical systems with digital ones—and turning ideas into useful things.",
     "stack": [
       "Astro",
       "Svelte / SvelteKit",
